@@ -20,4 +20,4 @@ fishd.*
 .fish/fish_variables.x86_64
 
 # Karabiner
-.karabiner/automatic_backups
+karabiner/automatic_backups
