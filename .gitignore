@@ -21,3 +21,6 @@ fishd.*
 
 # Karabiner
 karabiner/automatic_backups
+
+# Lunarvim
+lvim/plugin/packer_compiled.lua
