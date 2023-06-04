@@ -72,3 +72,7 @@ code_actions.setup {
     filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" },
   },
 }
+
+lvim.builtin.lualine.options.theme = "solarized_dark"
+lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
+lvim.builtin.lualine.options.component_separators = { left = '', right = '' }
