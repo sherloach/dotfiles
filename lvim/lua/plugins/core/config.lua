@@ -73,6 +73,6 @@ code_actions.setup {
   },
 }
 
-lvim.builtin.lualine.options.theme = "solarized_dark"
-lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
-lvim.builtin.lualine.options.component_separators = { left = '', right = '' }
+-- lvim.builtin.lualine.options.theme = "solarized_dark"
+-- lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
+-- lvim.builtin.lualine.options.component_separators = { left = '', right = '' }
