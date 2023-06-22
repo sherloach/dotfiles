@@ -26,10 +26,9 @@ karabiner/automatic_backups
 # Lunarvim
 lvim/plugin/packer_compiled.lua
 
-iterm2
-
 # yarn
 yarn
 
-# expressvpn
 expressvpn
+iterm2
+btop
