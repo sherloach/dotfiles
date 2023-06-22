@@ -1,18 +1,15 @@
--- -- base
--- require('base.general')
--- -- keys
--- require('keys.main')           -- Keys for built-in features
--- -- plugins
--- require('plugins.core.config') -- Configs for built-in plugins
--- require('plugins.packer.plugins')
-
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
-lvim.colorscheme = "material-deep-ocean"
+lvim.colorscheme = "lunar"
 lvim.transparent_window = true
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
+
+-- Additional plugin config
+vim.g.blamer_enabled = 1
+vim.g.blamer_delay = 500
+vim.g.blamer_show_in_visual_modes = 0
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -95,9 +92,13 @@ code_actions.setup {
   },
 }
 
--- lvim.builtin.lualine.options.theme = "solarized_dark"
--- lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
--- lvim.builtin.lualine.options.component_separators = { left = '', right = '' }
+lvim.autocommands = {
+  -- other commands,
+  {
+    "ColorScheme",
+    { command = "hi NvimTreeNormalNC guibg=NONE" },
+  }
+}
 
 -- Additional Plugins
 lvim.plugins = {
@@ -126,44 +127,6 @@ lvim.plugins = {
     end,
   },
   { 'navarasu/onedark.nvim' },
-  -- {
-  --   'tjdevries/colorbuddy.nvim',
-  --   event = "BufRead",
-  --   config = function()
-  --     local Color, colors, Group, groups, styles = require('colorbuddy').setup()
-
-  --     Color.new('white', '#ffffff')
-  --     Color.new('black', '#000000')
-  --     Group.new('Normal', colors.base1, colors.NONE, styles.NONE)
-  --     Group.new('CursorLine', colors.none, colors.base03, styles.NONE, colors.base1)
-  --     Group.new('CursorLineNr', colors.yellow, colors.black, styles.NONE, colors.base1)
-  --     Group.new('Visual', colors.none, colors.base03, styles.reverse)
-
-  --     local cError = groups.Error.fg
-  --     local cInfo = groups.Information.fg
-  --     local cWarn = groups.Warning.fg
-  --     local cHint = groups.Hint.fg
-
-  --     Group.new("DiagnosticVirtualTextError", cError, cError:dark():dark():dark():dark(), styles.NONE)
-  --     Group.new("DiagnosticVirtualTextInfo", cInfo, cInfo:dark():dark():dark(), styles.NONE)
-  --     Group.new("DiagnosticVirtualTextWarn", cWarn, cWarn:dark():dark():dark(), styles.NONE)
-  --     Group.new("DiagnosticVirtualTextHint", cHint, cHint:dark():dark():dark(), styles.NONE)
-  --     Group.new("DiagnosticUnderlineError", colors.none, colors.none, styles.undercurl, cError)
-  --     Group.new("DiagnosticUnderlineWarn", colors.none, colors.none, styles.undercurl, cWarn)
-  --     Group.new("DiagnosticUnderlineInfo", colors.none, colors.none, styles.undercurl, cInfo)
-  --     Group.new("DiagnosticUnderlineHint", colors.none, colors.none, styles.undercurl, cHint)
-
-  --     Group.new("HoverBorder", colors.yellow, colors.none, styles.NONE)
-  --   end
-  -- },
-  -- {
-  --   'svrana/neosolarized.nvim',
-  --   config = function()
-  --     require('neosolarized').setup {
-  --       comment_italics = true,
-  --     }
-  --   end
-  -- },
   {
     'marko-cerovac/material.nvim',
     config = function()
