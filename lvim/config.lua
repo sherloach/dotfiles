@@ -15,6 +15,10 @@ vim.g.blamer_show_in_visual_modes = 0
 lvim.leader = "space"
 -- add your own keymapping
 
+-- Prevent swaps line when hit esc and j/k at the same time
+vim.opt.timeoutlen = 1000
+vim.opt.ttimeoutlen = 0
+
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- TODO: User Config for predefined plugins
@@ -57,7 +61,7 @@ formatters.setup {
     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
     extra_args = { "--print-with", "100" },
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "rust" },
   },
 }
 
@@ -80,7 +84,7 @@ linters.setup {
   {
     command = "eslint_d",
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "python" },
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "python", "rust" },
   }
 }
 
@@ -88,7 +92,7 @@ local code_actions = require "lvim.lsp.null-ls.code_actions"
 code_actions.setup {
   {
     exe = "eslint_d",
-    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" },
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue", "rust" },
   },
 }
 
