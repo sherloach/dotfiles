@@ -1,8 +1,7 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
-lvim.colorscheme = "lunar"
-lvim.transparent_window = true
+lvim.transparent_window = false
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -28,7 +27,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.indentlines.active = false
+-- lvim.builtin.indentlines.active = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -61,7 +60,7 @@ formatters.setup {
     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
     extra_args = { "--print-with", "100" },
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "rust" },
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   },
 }
 
@@ -84,7 +83,7 @@ linters.setup {
   {
     command = "eslint_d",
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "python", "rust" },
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "python" },
   }
 }
 
@@ -92,17 +91,26 @@ local code_actions = require "lvim.lsp.null-ls.code_actions"
 code_actions.setup {
   {
     exe = "eslint_d",
-    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue", "rust" },
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" },
   },
 }
 
-lvim.autocommands = {
-  -- other commands,
-  {
-    "ColorScheme",
-    { command = "hi NvimTreeNormalNC guibg=NONE" },
+-- lvim.autocommands = {
+--   -- other commands,
+--   {
+--     "ColorScheme",
+--     { command = "hi NvimTreeNormalNC guibg=NONE" },
+--   }
+-- }
+
+require('ayu').setup({
+  mirage = false,
+  overrides = {
+    Constant = { fg = '#D2A6FF' }
   }
-}
+})
+
+lvim.colorscheme = "ayu"
 
 -- Additional Plugins
 lvim.plugins = {
@@ -130,7 +138,6 @@ lvim.plugins = {
       })
     end,
   },
-  { 'navarasu/onedark.nvim' },
   {
     'marko-cerovac/material.nvim',
     config = function()
@@ -173,7 +180,7 @@ lvim.plugins = {
           -- "trouble",
           -- "which-key",
         },
-        disable = {
+        disale = {
           colored_cursor = false, -- Disable the colored cursor
           borders = false,        -- Disable borders between verticaly split windows
           background = true,      -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
@@ -192,5 +199,43 @@ lvim.plugins = {
         }, -- Overwrite highlights with your own
       })
     end
+  },
+  { 'shatur/neovim-ayu' },
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        autotag = {
+          enable = true,
+        }
+      })
+    end
+  },
+  {
+    'abecodes/tabout.nvim',
+    config = function()
+      require('tabout').setup {
+        tabkey = '<Tab>',         -- key to trigger tabout, set to an empty string to disable
+        backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
+        act_as_tab = true,        -- shift content if tab out is not possible
+        act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
+        default_tab = '<C-t>',    -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
+        default_shift_tab = '<C-d>', -- reverse shift default action,
+        enable_backwards = true,  -- well ...
+        completion = true,        -- if the tabkey is used in a completion pum
+        tabouts = {
+          { open = "'", close = "'" },
+          { open = '"', close = '"' },
+          { open = '`', close = '`' },
+          { open = '(', close = ')' },
+          { open = '[', close = ']' },
+          { open = '{', close = '}' }
+        },
+        ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
+        exclude = {} -- tabout will ignore these filetypes
+      }
+    end,
+    wants = { 'nvim-treesitter' }, -- or require if not used so far
+    after = { 'nvim-cmp' }    -- if a completion plugin is using tabs load it before
   }
 }
