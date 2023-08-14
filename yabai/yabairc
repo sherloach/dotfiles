@@ -36,3 +36,4 @@ yabai -m rule --add app="^Stats$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Messenger$" manage=off
 yabai -m rule --add app="^ExpressVPN$" manage=off
+yabai -m rule --add app="^Hearthstone$" manage=off
