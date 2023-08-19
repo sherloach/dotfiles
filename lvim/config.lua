@@ -125,7 +125,7 @@ require('material').setup({
   styles = {
     -- Give comments style such as bold, italic, underline etc.
     comments = { italic = true },
-    strings = { --[[ bold = true ]] },
+    strings = { italic = true },
     keywords = { italic = true },
     functions = { italic = true },
     variables = { italic = false },
@@ -138,7 +138,7 @@ require('material').setup({
     -- "dashboard",
     "gitsigns",
     "hop",
-    -- "indent-blankline",
+    "indent-blankline",
     -- "lspsaga",
     -- "mini",
     -- "neogit",
