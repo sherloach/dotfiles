@@ -1,58 +1,25 @@
--- general
-lvim.log.level = "warn"
+-- Read the docs: https://www.lunarvim.org/docs/configuration
+-- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
+-- Forum: https://www.reddit.com/r/lunarvim/
+-- Discord: https://discord.com/invite/Xb9B4Ny
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Keep cursor at the middle of screen
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+lvim.colorscheme = "material"
+vim.g.material_style = "deep ocean"
+
 lvim.format_on_save.enabled = true
-lvim.transparent_window = false
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
-
--- Additional plugin config
-vim.g.blamer_enabled = 1
-vim.g.blamer_delay = 500
-vim.g.blamer_show_in_visual_modes = 0
-
--- keymappings [view all the defaults by pressing <leader>Lk]
-lvim.leader = "space"
--- add your own keymapping
-
--- Prevent swaps line when hit esc and j/k at the same time
-vim.opt.timeoutlen = 1000
-vim.opt.ttimeoutlen = 0
-
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-
--- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.alpha.active = true
-lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
--- lvim.builtin.indentlines.active = false
-
--- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
-}
-
-lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enable = true
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { command = "black", filetypes = { "python" } },
-  { command = "isort", filetypes = { "python" } },
   {
     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
     command = "prettier",
@@ -67,7 +34,6 @@ formatters.setup {
 -- -- set additional linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { command = "flake8", filetypes = { "python" } },
   {
     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
     command = "shellcheck",
@@ -91,27 +57,10 @@ local code_actions = require "lvim.lsp.null-ls.code_actions"
 code_actions.setup {
   {
     exe = "eslint_d",
-    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" },
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   },
 }
 
--- lvim.autocommands = {
---   -- other commands,
---   {
---     "ColorScheme",
---     { command = "hi NvimTreeNormalNC guibg=NONE" },
---   }
--- }
-
-require('ayu').setup({
-  mirage = false,
-  overrides = {
-    Constant = { fg = '#D2A6FF' }
-  }
-})
-
-lvim.colorscheme = "material"
-vim.g.material_style = "deep ocean"
 local colors = require('material.colors')
 require('material').setup({
   contrast = {
@@ -125,7 +74,7 @@ require('material').setup({
   styles = {
     -- Give comments style such as bold, italic, underline etc.
     comments = { italic = true },
-    strings = { italic = true },
+    strings = { italic = false },
     keywords = { italic = true },
     functions = { italic = true },
     variables = { italic = false },
@@ -179,7 +128,6 @@ require('material').setup({
   }, -- Overwrite highlights with your own
 })
 
--- Additional Plugins
 lvim.plugins = {
   {
     "phaazon/hop.nvim",
@@ -190,25 +138,8 @@ lvim.plugins = {
       vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
     end,
   },
-  { 'APZelos/blamer.nvim' },
   {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require("colorizer").setup({ "css", "scss", "html", "javascript", "typescript", "typescriptreact" }, {
-        RGB = true,      -- #RGB hex codes
-        RRGGBB = true,   -- #RRGGBB hex codes
-        RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true,   -- CSS rgb() and rgba() functions
-        hsl_fn = true,   -- CSS hsl() and hsla() functions
-        css = true,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
-      })
-    end,
-  },
-  { 'marko-cerovac/material.nvim' },
-  { 'shatur/neovim-ayu' },
-  {
-    'windwp/nvim-ts-autotag',
+    "windwp/nvim-ts-autotag",
     config = function()
       require('nvim-treesitter.configs').setup({
         autotag = {
@@ -217,31 +148,5 @@ lvim.plugins = {
       })
     end
   },
-  {
-    'abecodes/tabout.nvim',
-    config = function()
-      require('tabout').setup {
-        tabkey = '<Tab>',             -- key to trigger tabout, set to an empty string to disable
-        backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
-        act_as_tab = true,            -- shift content if tab out is not possible
-        act_as_shift_tab = false,     -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
-        default_tab = '<C-t>',        -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
-        default_shift_tab = '<C-d>',  -- reverse shift default action,
-        enable_backwards = true,      -- well ...
-        completion = true,            -- if the tabkey is used in a completion pum
-        tabouts = {
-          { open = "'", close = "'" },
-          { open = '"', close = '"' },
-          { open = '`', close = '`' },
-          { open = '(', close = ')' },
-          { open = '[', close = ']' },
-          { open = '{', close = '}' }
-        },
-        ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
-        exclude = {} -- tabout will ignore these filetypes
-      }
-    end,
-    wants = { 'nvim-treesitter' }, -- or require if not used so far
-    after = { 'nvim-cmp' }         -- if a completion plugin is using tabs load it before
-  }
+  { "marko-cerovac/material.nvim" },
 }
