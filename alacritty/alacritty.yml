@@ -20,7 +20,7 @@ window:
   decorations: buttonless
 
   # Background opacity
-  opacity: 0.97
+  opacity: 0.93
 
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
@@ -36,19 +36,20 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: DankMonoNerdFont Nerd Font Mono
+    # family: DankMono Nerd Font Plus Font Awesome
+    family: DankMono Nerd Font Mono
     style: Regular
 
   bold:
-    family: DankMonoNerdFont Nerd Font Mono
+    family: DankMono Nerd Font Mono
     style: Bold
 
   italic:
-    family: DankMonoNerdFont Nerd Font Mono
+    family: DankMono Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: DankMonoNerdFont Nerd Font Mono
+    family: DankMono Nerd Font Mono
     style: Italic 
 
   size: 12.5
