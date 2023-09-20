@@ -12,10 +12,15 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-lvim.colorscheme = "material"
-vim.g.material_style = "deep ocean"
+-- Prevent swaps line when hit esc and j/k at the same time
+vim.opt.timeoutlen = 1000
+vim.opt.ttimeoutlen = 0
+
+-- lvim.colorscheme = "material"
+-- vim.g.material_style = "deep ocean"
 
 lvim.format_on_save.enabled = true
+lvim.builtin.indentlines.options.show_current_context = false
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
