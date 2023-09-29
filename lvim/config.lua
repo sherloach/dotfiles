@@ -16,11 +16,13 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.opt.timeoutlen = 1000
 vim.opt.ttimeoutlen = 0
 
--- lvim.colorscheme = "material"
+lvim.colorscheme = "no-clown-fiesta"
 -- vim.g.material_style = "deep ocean"
 
 lvim.format_on_save.enabled = true
-lvim.builtin.indentlines.options.show_current_context = false
+lvim.builtin.indentlines.active = false
+lvim.builtin.nvimtree.setup.view.side = 'right'
+lvim.builtin.lualine.options.theme = 'no-clown-fiesta'
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -154,4 +156,21 @@ lvim.plugins = {
     end
   },
   { "marko-cerovac/material.nvim" },
+  {
+    "aktersnurra/no-clown-fiesta.nvim",
+    config = function()
+      require("no-clown-fiesta").setup({
+        transparent = false, -- Enable this to disable the bg color
+        styles = {
+          -- You can set any of the style values specified for `:h nvim_set_hl`
+          comments = {},
+          keywords = {},
+          functions = {},
+          variables = {},
+          type = { bold = true },
+          lsp = { underline = true }
+        },
+      })
+    end,
+  }
 }

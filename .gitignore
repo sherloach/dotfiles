@@ -29,6 +29,8 @@ lvim/plugin/packer_compiled.lua
 # yarn
 yarn
 
+raycast
+
 expressvpn
 iterm2
 btop
