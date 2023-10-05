@@ -16,13 +16,21 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.opt.timeoutlen = 1000
 vim.opt.ttimeoutlen = 0
 
+-- Fix Weird status line symbols (^)
+vim.opt.fillchars = 'stl: '
+
 lvim.colorscheme = "no-clown-fiesta"
 -- vim.g.material_style = "deep ocean"
 
 lvim.format_on_save.enabled = true
+
+-- disable unused plugins
 lvim.builtin.indentlines.active = false
+lvim.builtin.lir.active = false
+lvim.builtin.dap.active = false
+lvim.builtin.illuminate.active = false
+
 lvim.builtin.nvimtree.setup.view.side = 'right'
-lvim.builtin.lualine.options.theme = 'no-clown-fiesta'
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -172,5 +180,5 @@ lvim.plugins = {
         },
       })
     end,
-  }
+  },
 }
