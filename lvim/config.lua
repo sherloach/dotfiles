@@ -31,6 +31,14 @@ lvim.builtin.dap.active = false
 lvim.builtin.illuminate.active = false
 
 lvim.builtin.nvimtree.setup.view.side = 'right'
+lvim.builtin.lualine.sections.lualine_z = {
+  {
+    'vim.fn["codeium#GetStatusString"]()',
+    fmt = function(str)
+      return "{…}:" .. str:match("^%s*(.-)%s*$")
+    end
+  }
+}
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -173,7 +181,7 @@ lvim.plugins = {
           -- You can set any of the style values specified for `:h nvim_set_hl`
           comments = {},
           keywords = {},
-          functions = {},
+          functions = { bold = true },
           variables = {},
           type = { bold = true },
           lsp = { underline = true }
@@ -181,4 +189,8 @@ lvim.plugins = {
       })
     end,
   },
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter'
+  }
 }
