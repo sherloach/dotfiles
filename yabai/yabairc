@@ -28,6 +28,18 @@ yabai -m config mouse_drop_action swap
 # Some application/windows appear to have trouble with child windows when made topmost
 yabai -m config window_topmost off
 
+yabai -m config auto_balance off
+yabai -m config window_animation_duration    0.0
+
+yabai -m rule --add app="Arc" space=^1
+
+yabai -m rule --add app="Alacritty" space=^2
+yabai -m rule --add app="Code" space=^2
+
+# yabai -m space 3 --layout stack
+yabai -m rule --add app="Spotify" space=^3
+yabai -m rule --add app="Discord" space=^3
+
 # Disable specific apps
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
@@ -38,3 +50,4 @@ yabai -m rule --add app="^Messenger$" manage=off
 yabai -m rule --add app="^ExpressVPN$" manage=off
 yabai -m rule --add app="^Hearthstone$" manage=off
 yabai -m rule --add app="^Cisco Packet Tracer$" manage=off
+yabai -m rule --add app="^dice-poker$" manage=off
