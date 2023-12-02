@@ -18,12 +18,16 @@
         },
         "rules": [
           {
-            "description": "Hyper Key (⌃⌥⇧⌘)",
+            "description": "Map Tab to Hyper when held",
             "manipulators": [
               {
-                "description": "Right Command -> Hyper Key",
                 "from": {
-                  "key_code": "right_gui"
+                  "key_code": "tab",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
                   {
@@ -37,7 +41,7 @@
                 ],
                 "to_if_alone": [
                   {
-                    "key_code": "escape"
+                    "key_code": "tab"
                   }
                 ],
                 "type": "basic"
@@ -47,121 +51,121 @@
           {
             "description": "Open Arc Application",
             "manipulators": [
-            {
-              "from": {
-                "key_code": "g",
-                "modifiers": {
-                  "mandatory": [
-                    "left_command",
-                    "left_control",
-                    "left_shift",
-                    "left_option"
-                  ]
-                }
-              },
-              "to": [
-                {
-                  "shell_command": "open -a 'Arc.app'"
-                }
-              ],
-              "type": "basic"
-            }
+              {
+                "from": {
+                  "key_code": "g",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Arc.app'"
+                  }
+                ],
+                "type": "basic"
+              }
             ]
           },
           {
             "description": "Open VS Code Application",
             "manipulators": [
-            {
-              "from": {
-                "key_code": "v",
-                "modifiers": {
-                  "mandatory": [
-                    "left_command",
-                    "left_control",
-                    "left_shift",
-                    "left_option"
-                  ]
-                }
-              },
-              "to": [
-                {
-                  "shell_command": "open -a 'Visual Studio Code.app'"
-                }
-              ],
-              "type": "basic"
-            }
+              {
+                "from": {
+                  "key_code": "v",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Visual Studio Code.app'"
+                  }
+                ],
+                "type": "basic"
+              }
             ]
           },
           {
             "description": "Open Alacritty Application",
             "manipulators": [
-            {
-              "from": {
-                "key_code": "t",
-                "modifiers": {
-                  "mandatory": [
-                    "left_command",
-                    "left_control",
-                    "left_shift",
-                    "left_option"
-                  ]
-                }
-              },
-              "to": [
-                {
-                  "shell_command": "open -a 'Alacritty.app'"
-                }
-              ],
-              "type": "basic"
-            }
+              {
+                "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Alacritty.app'"
+                  }
+                ],
+                "type": "basic"
+              }
             ]
           },
           {
             "description": "Open Spotify Application",
             "manipulators": [
-            {
-              "from": {
-                "key_code": "s",
-                "modifiers": {
-                  "mandatory": [
-                    "left_command",
-                    "left_control",
-                    "left_shift",
-                    "left_option"
-                  ]
-                }
-              },
-              "to": [
-                {
-                  "shell_command": "open -a 'Spotify.app'"
-                }
-              ],
-              "type": "basic"
-            }
+              {
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Spotify.app'"
+                  }
+                ],
+                "type": "basic"
+              }
             ]
           },
           {
             "description": "Open Discord Application",
             "manipulators": [
-            {
-              "from": {
-                "key_code": "d",
-                "modifiers": {
-                  "mandatory": [
-                    "left_command",
-                    "left_control",
-                    "left_shift",
-                    "left_option"
-                  ]
-                }
-              },
-              "to": [
-                {
-                  "shell_command": "open -a 'Discord.app'"
-                }
-              ],
-              "type": "basic"
-            }
+              {
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Discord.app'"
+                  }
+                ],
+                "type": "basic"
+              }
             ]
           },
           {
