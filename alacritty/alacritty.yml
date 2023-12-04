@@ -20,7 +20,7 @@ window:
   decorations: buttonless
 
   # Background opacity
-  opacity: 0.95
+  opacity: 0.96
 
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
@@ -36,29 +36,31 @@ scrolling:
 # Font configuration
 font:
   normal:
-    # family: DankMono Nerd Font Mono
-    family: FiraCode Nerd Font Mono
-    # style: Regular
-    style: Light
+    family: DankMono Nerd Font Mono
+    # family: SauceCodePro Nerd Font Mono
+    # family: FiraCode Nerd Font Mono
+    style: Bold
+    # style: Light
 
   bold:
-    # family: DankMono Nerd Font Mono
-    family: FiraCode Nerd Font
-    style: Regular
+    family: DankMono Nerd Font Mono
+    # family: SauceCodePro Nerd Font Mono
+    # family: FiraCode Nerd Font
+    style: Bold
 
   italic:
-    family: FiraCode Nerd Font
-    # family: DankMono Nerd Font Mono
-    # style: Regular
-    style: Light
+    # family: FiraCode Nerd Font
+    # family: SauceCodePro Nerd Font Mono
+    family: DankMono Nerd Font Mono
+    style: Italic
 
   bold_italic:
-    family: FiraCode Nerd Font
+    # family: FiraCode Nerd Font
+    family: SauceCodePro Nerd Font Mono
     # family: DankMono Nerd Font Mono
-    # style: Regular
-    style: Light
+    style: Italic
 
-  size: 12.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -85,6 +87,78 @@ font:
 draw_bold_text_with_bright_colors: true
 
 schemes:
+  # Colors (Poimandres)
+  poimandres: &poimandres
+    # Default colors
+    primary:
+      background: "0x1b1e28"
+      foreground: "0xa6accd"
+
+    # Cursor colors
+    cursor:
+      text: CellBackground
+      cursor: CellForeground
+
+    # Search colors
+    #
+    # Colors used for the search bar and match highlighting.
+    search:
+      # Allowed values are CellForeground/CellBackground, which reference the
+      # affected cell, or hexadecimal colors like #ff00ff.
+      matches:
+        foreground: "0x1b1e28"
+        background: "0xadd7ff"
+
+      focused_match:
+        foreground: "0x1b1e28"
+        background: "0xadd7ff"
+
+      colors.footer_bar:
+        foreground: "0x1b1e28"
+        background: "0xadd7ff"
+
+    # Selection colors
+    #
+    # Colors which should be used to draw the selection area.
+    #
+    # Allowed values are CellForeground/CellBackground, which reference the
+    # affected cell, or hexadecimal colors like #ff00ff.
+    selection:
+      text: CellForeground
+      background: "0x303340"
+
+    # Vi mode cursor colors
+    #
+    # Colors for the cursor when the vi mode is active.
+    #
+    # Allowed values are CellForeground/CellBackground, which reference the
+    # affected cell, or hexadecimal colors like #ff00ff.
+    vi_mode_cursor:
+      text: CellBackground
+      cursor: CellForeground
+
+    # Normal colors
+    normal:
+      black: "0x1b1e28"
+      red: "0xd0679d"
+      green: "0x5de4c7"
+      yellow: "0xfffac2"
+      blue: "0x89ddff"
+      magenta: "0xfcc5e9"
+      cyan: "0xadd7ff"
+      white: "0xffffff"
+
+    # Bright colors
+    bright:
+      black: "0xa6accd"
+      red: "0xd0679d"
+      green: "0x5de4c7"
+      yellow: "0xfffac2"
+      blue: "0xadd7ff"
+      magenta: "0xfae4fc"
+      cyan: "0x89ddff"
+      white: "0xffffff"
+
   # Colors (Ayu Dark)
   ayu: &ayu # Default colors
     primary:
@@ -146,7 +220,7 @@ schemes:
     # Cursor color
     cursor:
       text: '#888888'
-      cursor: '#FFCC00'
+      # cursor: '#FFCC00'
 
     primary:
       background: '#151515'
@@ -208,7 +282,35 @@ schemes:
       cyan:    '#0db9d7'
       white:   '#acb0d0'
 
-colors: *no-clown-fiesta
+  vitesse: &vitesse
+    # Default colors
+    primary:
+      background: '#111111'
+      foreground: '#c8c5b8'
+
+    # Normal colors
+    normal:
+      black:   '#393a34'
+      red:     '#cb7676'
+      green:   '#4d9375'
+      yellow:  '#e6cc77'
+      blue:    '#6394bf'
+      magenta: '#d9739f'
+      cyan:    '#5eaab5'
+      white:   '#ebebeb'
+
+    # Bright colors
+    bright:
+      black:   '#777777'
+      red:     '#cb7676'
+      green:   '#4d9375'
+      yellow:  '#e6cc77'
+      blue:    '#6394bf'
+      magenta: '#d9739f'
+      cyan:    '#5eaab5'
+      white:   '#ffffff'
+
+colors: *github
 
 live_config_reload: true
 
