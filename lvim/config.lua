@@ -19,7 +19,7 @@ vim.opt.ttimeoutlen = 0
 -- Fix Weird status line symbols (^)
 vim.opt.fillchars = 'stl: '
 
-lvim.colorscheme = "no-clown-fiesta"
+-- lvim.colorscheme = "vitesse"
 -- vim.g.material_style = "deep ocean"
 
 lvim.format_on_save.enabled = true
@@ -29,16 +29,18 @@ lvim.builtin.indentlines.active = false
 lvim.builtin.lir.active = false
 lvim.builtin.dap.active = false
 lvim.builtin.illuminate.active = false
+lvim.builtin.breadcrumbs.active = false
+lvim.transparent_window = true
 
 lvim.builtin.nvimtree.setup.view.side = 'right'
-lvim.builtin.lualine.sections.lualine_z = {
-  {
-    'vim.fn["codeium#GetStatusString"]()',
-    fmt = function(str)
-      return "{…}:" .. str:match("^%s*(.-)%s*$")
-    end
-  }
-}
+-- lvim.builtin.lualine.sections.lualine_z = {
+--   {
+--     'vim.fn["codeium#GetStatusString"]()',
+--     fmt = function(str)
+--       return "{…}:" .. str:match("^%s*(.-)%s*$")
+--     end
+--   }
+-- }
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -84,72 +86,73 @@ code_actions.setup {
   },
 }
 
-local colors = require('material.colors')
-require('material').setup({
-  contrast = {
-    terminal = false,            -- Enable contrast for the built-in terminal
-    sidebars = false,            -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
-    floating_windows = false,    -- Enable contrast for floating windows
-    cursor_line = false,         -- Enable darker background for the cursor line
-    non_current_windows = false, -- Enable contrasted background for non-current windows
-    filetypes = {},              -- Specify which filetypes get the contrasted (darker) background
-  },
-  styles = {
-    -- Give comments style such as bold, italic, underline etc.
-    comments = { italic = true },
-    strings = { italic = false },
-    keywords = { italic = true },
-    functions = { italic = true },
-    variables = { italic = false },
-    operators = {},
-    types = { italic = true },
-  },
-  plugins = { -- Uncomment the plugins that you use to highlight them
-    -- Available plugins:
-    -- "dap",
-    -- "dashboard",
-    "gitsigns",
-    "hop",
-    "indent-blankline",
-    -- "lspsaga",
-    -- "mini",
-    -- "neogit",
-    -- "neorg",
-    "nvim-cmp",
-    "nvim-navic",
-    "nvim-tree",
-    "nvim-web-devicons",
-    -- "sneak",
-    "telescope",
-    -- "trouble",
-    -- "which-key",
-  },
-  disale = {
-    colored_cursor = false, -- Disable the colored cursor
-    borders = false,        -- Disable borders between verticaly split windows
-    background = true,      -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
-    term_colors = false,    -- Prevent the theme from setting terminal colors
-    eob_lines = false       -- Hide the end-of-buffer lines
-  },
-  high_visibility = {
-    lighter = false,         -- Enable higher contrast text for lighter style
-    darker = false           -- Enable higher contrast text for darker style
-  },
-  lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
-  async_loading = true,      -- Load parts of the theme asyncronously for faster startup (turned on by default)
-  custom_colors = nil,       -- If you want to everride the default colors, set this to a function
-  custom_highlights = {
-    ['@keyword'] = {
-      fg = colors.main.cyan,
-      italic = true
-    },
-    ['@include'] = {
-      fg = colors.main.cyan,
-      italic = true
-    }
-    -- NormalNC = { bg = 'NONE' }
-  }, -- Overwrite highlights with your own
-})
+-- local colors = require('material.colors')
+-- require('material').setup({
+--   contrast = {
+--     terminal = false,            -- Enable contrast for the built-in terminal
+--     sidebars = false,            -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+--     floating_windows = false,    -- Enable contrast for floating windows
+--     cursor_line = false,         -- Enable darker background for the cursor line
+--     non_current_windows = false, -- Enable contrasted background for non-current windows
+--     filetypes = {},              -- Specify which filetypes get the contrasted (darker) background
+--   },
+--   styles = {
+--     -- Give comments style such as bold, italic, underline etc.
+--     comments = { italic = true },
+--     strings = { italic = false },
+--     keywords = { italic = true },
+--     functions = { italic = true },
+--     variables = { italic = false },
+--     operators = {},
+--     types = { italic = true },
+--   },
+--   plugins = { -- Uncomment the plugins that you use to highlight them
+--     -- Available plugins:
+--     -- "dap",
+--     -- "dashboard",
+--     "gitsigns",
+--     "hop",
+--     "indent-blankline",
+--     -- "lspsaga",
+--     -- "mini",
+--     -- "neogit",
+--     -- "neorg",
+--     "nvim-cmp",
+--     "nvim-navic",
+--     "nvim-tree",
+--     "nvim-web-devicons",
+--     -- "sneak",
+--     "telescope",
+--     -- "trouble",
+--     -- "which-key",
+--   },
+--   disale = {
+--     colored_cursor = false, -- Disable the colored cursor
+--     borders = false,        -- Disable borders between verticaly split windows
+--     background = true,      -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
+--     term_colors = false,    -- Prevent the theme from setting terminal colors
+--     eob_lines = false       -- Hide the end-of-buffer lines
+--   },
+--   high_visibility = {
+--     lighter = false,         -- Enable higher contrast text for lighter style
+--     darker = false           -- Enable higher contrast text for darker style
+--   },
+--   lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
+--   async_loading = true,      -- Load parts of the theme asyncronously for faster startup (turned on by default)
+--   custom_colors = nil,       -- If you want to everride the default colors, set this to a function
+--   custom_highlights = {
+--     ['@keyword'] = {
+--       fg = colors.main.cyan,
+--       italic = true
+--     },
+--     ['@include'] = {
+--       fg = colors.main.cyan,
+--       italic = true
+--     }
+--     -- NormalNC = { bg = 'NONE' }
+--   }, -- Overwrite highlights with your own
+-- })
+
 
 lvim.plugins = {
   {
@@ -192,5 +195,89 @@ lvim.plugins = {
   {
     'Exafunction/codeium.vim',
     event = 'BufEnter'
+  },
+  {
+    'olivercederborg/poimandres.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('poimandres').setup {
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+      }
+    end,
+
+    -- optionally set the colorscheme within lazy config
+    init = function()
+      vim.cmd("colorscheme poimandres")
+    end
+  },
+  {
+    "2nthony/vitesse.nvim",
+    dependencies = {
+      "tjdevries/colorbuddy.nvim"
+    },
+    config = function()
+      require('vitesse').setup({
+        comment_italics = true,
+        transparent_background = false,
+        transparent_float_background = false, -- aka pum(popup menu) background
+        reverse_visual = false,
+        dim_nc = false,
+        cmp_cmdline_disable_search_highlight_group = false, -- disable search highlight group for cmp item
+        -- if `transparent_float_background` false, make telescope border color same as float background
+        telescope_border_follow_float_background = false,
+        -- diagnostic virtual text background, like error lens
+        diagnostic_virtual_text_background = false,
+
+        -- override the `lua/vitesse/palette.lua`, go to file see fields
+        colors = {},
+        themes = {
+          background = '#000000', -- override background
+        },
+      })
+    end,
+  },
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require("solarized-osaka").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        transparent = false,    -- Enable this to disable setting the background color
+        terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
+        styles = {
+          -- Style to be applied to different syntax groups
+          -- Value is any valid attr-list value for `:help nvim_set_hl`
+          comments = { italic = true },
+          keywords = { italic = true },
+          functions = {},
+          variables = {},
+          -- Background styles. Can be "dark", "transparent" or "normal"
+          sidebars = "dark",              -- style for sidebars, see below
+          floats = "dark",                -- style for floating windows
+        },
+        sidebars = { "qf", "help" },      -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+        day_brightness = 0.3,             -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+        hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+        dim_inactive = false,             -- dims inactive windows
+        lualine_bold = false,             -- When `true`, section headers in the lualine theme will be bold
+
+        --- You can override specific color groups to use other groups or a hex color
+        --- function will be called with a ColorScheme table
+        ---@param colors ColorScheme
+        on_colors = function(colors) end,
+
+        --- You can override specific highlights to use other groups or a hex color
+        --- function will be called with a Highlights and ColorScheme table
+        ---@param highlights Highlights
+        ---@param colors ColorScheme
+        on_highlights = function(highlights, colors) end,
+      })
+    end
   }
 }
