@@ -36,27 +36,17 @@ scrolling:
 # Font configuration
 font:
   normal:
-    # family: DankMono Nerd Font Mono
     family: SauceCodePro Nerd Font Mono
-    style: Regular
-    # style: Light
+    # family: Dank Mono
+    # style: Regular
 
   bold:
-    # family: DankMono Nerd Font Mono
-    # family: SauceCodePro Nerd Font Mono
-    # family: FiraCode Nerd Font
     style: Medium
 
   italic:
-    # family: FiraCode Nerd Font
-    # family: SauceCodePro Nerd Font Mono
-    # family: DankMono Nerd Font Mono
     style: Italic
 
   bold_italic:
-    # family: FiraCode Nerd Font
-    # family: SauceCodePro Nerd Font Mono
-    # family: DankMono Nerd Font Mono
     style: Italic
 
   size: 13.0
@@ -256,7 +246,7 @@ schemes:
 
   gruvbox: &gruvbox
     primary:
-      background: '0x121212'
+      background: '0x0f0f0f'
       foreground: '0xd4be98'
     normal:
       black:   '0x32302f'
