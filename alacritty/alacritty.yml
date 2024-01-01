@@ -20,7 +20,7 @@ window:
   decorations: buttonless
 
   # Background opacity
-  opacity: 0.96
+  opacity: 1
 
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
@@ -36,27 +36,26 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: DankMono Nerd Font Mono
-    # family: SauceCodePro Nerd Font Mono
-    # family: FiraCode Nerd Font Mono
-    style: Bold
+    # family: DankMono Nerd Font Mono
+    family: SauceCodePro Nerd Font Mono
+    style: Regular
     # style: Light
 
   bold:
-    family: DankMono Nerd Font Mono
+    # family: DankMono Nerd Font Mono
     # family: SauceCodePro Nerd Font Mono
     # family: FiraCode Nerd Font
-    style: Bold
+    style: Medium
 
   italic:
     # family: FiraCode Nerd Font
     # family: SauceCodePro Nerd Font Mono
-    family: DankMono Nerd Font Mono
+    # family: DankMono Nerd Font Mono
     style: Italic
 
   bold_italic:
     # family: FiraCode Nerd Font
-    family: SauceCodePro Nerd Font Mono
+    # family: SauceCodePro Nerd Font Mono
     # family: DankMono Nerd Font Mono
     style: Italic
 
@@ -84,7 +83,7 @@ font:
   builtin_box_drawing: true
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 schemes:
   # Colors (Poimandres)
@@ -159,38 +158,11 @@ schemes:
       cyan: "0x89ddff"
       white: "0xffffff"
 
-  # Colors (Ayu Dark)
-  ayu: &ayu # Default colors
-    primary:
-      background: "0x0f1419"
-      foreground: "0xe6e1cf"
-
-    # Normal colors
-    normal:
-      black: "0x000000"
-      red: "0xf34a4a"
-      green: "0xbae67e"
-      yellow: "0xffee99"
-      blue: "0x73d0ff"
-      magenta: "0xd4bfff"
-      cyan: "0x83CEC6"
-      white: "0xf2f2f2"
-
-    # Bright colors
-    bright:
-      black: "0x737d87"
-      red: "0xff3333"
-      green: "0xc2d94c"
-      yellow: "0xe7c547"
-      blue: "0x59c2ff"
-      magenta: "0xb77ee0"
-      cyan: "0x5ccfe6"
-      white: "0xffffff"
-
   github: &github
     primary:
       # background: "#2B2E35" # fullmoon background color
-      background: "#0b1015" # night
+      # background: "#0b1015" # night
+      background: "#0e1010" 
       # background: '#2d333b'
       foreground: "#adbac7"
     normal:
@@ -282,33 +254,33 @@ schemes:
       cyan:    '#0db9d7'
       white:   '#acb0d0'
 
-  vitesse: &vitesse
+  solarized: &solarized
     # Default colors
     primary:
-      background: '#111111'
-      foreground: '#c8c5b8'
+      background: '#00141A'
+      foreground: '#ADB8B8'
 
     # Normal colors
     normal:
-      black:   '#393a34'
-      red:     '#cb7676'
-      green:   '#4d9375'
-      yellow:  '#e6cc77'
-      blue:    '#6394bf'
-      magenta: '#d9739f'
-      cyan:    '#5eaab5'
-      white:   '#ebebeb'
+      black:   '#657B83'
+      red:     '#DC322F'
+      green:   '#859900'
+      yellow:  '#B58900'
+      blue:    '#268BD2'
+      magenta: '#D33682'
+      cyan:    '#2AA198'
+      white:   '#9EACAD'
 
     # Bright colors
     bright:
-      black:   '#777777'
-      red:     '#cb7676'
-      green:   '#4d9375'
-      yellow:  '#e6cc77'
-      blue:    '#6394bf'
-      magenta: '#d9739f'
-      cyan:    '#5eaab5'
-      white:   '#ffffff'
+      black:   '#657B83'
+      red:     '#F6524F'
+      green:   '#BAFB00'
+      yellow:  '#FFC100'
+      blue:    '#49AEF5'
+      magenta: '#F255A1'
+      cyan:    '#29EEDF'
+      white:   '#EEE8D5'
 
 colors: *github
 
