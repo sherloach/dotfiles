@@ -19,7 +19,8 @@ vim.opt.ttimeoutlen = 0
 -- Fix Weird status line symbols (^)
 vim.opt.fillchars = 'stl: '
 
--- lvim.colorscheme = "vitesse"
+lvim.colorscheme = "gruvbox-material"
+vim.g.gruvbox_material_background = 'hard'
 -- vim.g.material_style = "deep ocean"
 
 lvim.format_on_save.enabled = true
@@ -197,23 +198,6 @@ lvim.plugins = {
     event = 'BufEnter'
   },
   {
-    'olivercederborg/poimandres.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('poimandres').setup {
-        -- leave this setup function empty for default config
-        -- or refer to the configuration section
-        -- for configuration options
-      }
-    end,
-
-    -- optionally set the colorscheme within lazy config
-    init = function()
-      vim.cmd("colorscheme poimandres")
-    end
-  },
-  {
     "2nthony/vitesse.nvim",
     dependencies = {
       "tjdevries/colorbuddy.nvim"
@@ -279,5 +263,10 @@ lvim.plugins = {
         on_highlights = function(highlights, colors) end,
       })
     end
+  },
+  {
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
   }
 }
