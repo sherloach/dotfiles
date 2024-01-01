@@ -254,6 +254,29 @@ schemes:
       cyan:    '#0db9d7'
       white:   '#acb0d0'
 
+  gruvbox: &gruvbox
+    primary:
+      background: '0x121212'
+      foreground: '0xd4be98'
+    normal:
+      black:   '0x32302f'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+    bright:
+      black:   '0x32302f'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+
   solarized: &solarized
     # Default colors
     primary:
@@ -282,7 +305,7 @@ schemes:
       cyan:    '#29EEDF'
       white:   '#EEE8D5'
 
-colors: *github
+colors: *gruvbox
 
 live_config_reload: true
 
