@@ -10,9 +10,12 @@ alias ll="ls -l"
 alias lla="ll -A"
 alias g=git
 alias lv=lvim
+alias v=nvim
 
 alias python=/usr/local/bin/python3
 alias lg='lazygit'
+
+bindkey -s ^f "tmux-sessionizer\n"
 
 # source ~/.config/zsh/omer.zsh-theme
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
