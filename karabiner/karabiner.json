@@ -35,11 +35,6 @@
                     ]
                   }
                 ],
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
                 "type": "basic"
               }
             ]
@@ -86,6 +81,30 @@
                 "to": [
                   {
                     "shell_command": "open -a 'Visual Studio Code.app'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Open Messenger Application",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Messenger.app'"
                   }
                 ],
                 "type": "basic"
