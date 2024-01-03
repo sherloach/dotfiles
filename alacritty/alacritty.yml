@@ -37,8 +37,8 @@ scrolling:
 font:
   normal:
     family: SauceCodePro Nerd Font Mono
-    # family: Dank Mono
-    # style: Regular
+    # family: DankMono Nerd Font Mono
+    style: Regular
 
   bold:
     style: Medium
@@ -56,7 +56,7 @@ font:
   # spacing.
   offset:
     x: 0
-    y: 5
+    y: 2
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
