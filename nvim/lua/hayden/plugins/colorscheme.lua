@@ -1,28 +1,28 @@
 return {
-    {
-        "aktersnurra/no-clown-fiesta.nvim",
-        lazy = false,
-        config = function()
-            require("no-clown-fiesta").setup({
-                transparent = false, -- Enable this to disable the bg color
-                styles = {
-                    -- You can set any of the style values specified for `:h nvim_set_hl`
-                    comments = {},
-                    keywords = {},
-                    functions = {},
-                    variables = {},
-                    type = { bold = true },
-                    lsp = { underline = true }
-                },
-            })
-        end,
-    },
-    {
-        "sainnhe/gruvbox-material",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.g.gruvbox_material_background = 'hard'
+    -- {
+    --     "aktersnurra/no-clown-fiesta.nvim",
+    --     lazy = false,
+    --     config = function()
+    --         require("no-clown-fiesta").setup({
+    --             transparent = false, -- Enable this to disable the bg color
+    --             styles = {
+    --                 -- You can set any of the style values specified for `:h nvim_set_hl`
+    --                 comments = {},
+    --                 keywords = {},
+    --                 functions = {},
+    --                 variables = {},
+    --                 type = { bold = true },
+    --                 lsp = { underline = true }
+    --             },
+    --         })
+    --     end,
+    -- },
+    -- {
+    --     "sainnhe/gruvbox-material",
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         vim.g.gruvbox_material_background = 'hard'
             -- vim.g.gruvbox_material_better_performance = true
             -- vim.g.gruvbox_material_diagnostic_text_highlight = true
             -- vim.g.gruvbox_material_transparent_background = 2
@@ -40,8 +40,8 @@ return {
             -- end
             --
             -- ColorMyPencils()
-        end,
-    },
+    --     end,
+    -- },
     {
         "rebelot/kanagawa.nvim",
         lazy = false,
@@ -51,10 +51,10 @@ return {
                 compile = false,  -- enable compiling the colorscheme
                 undercurl = true, -- enable undercurls
                 commentStyle = { italic = true },
-                functionStyle = {},
-                keywordStyle = { italic = true },
+                functionStyle = { italic = false },
+                keywordStyle = { italic = false },
                 statementStyle = { bold = true },
-                typeStyle = {},
+                typeStyle = { italic = false },
                 transparent = false,   -- do not set background color
                 dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
                 terminalColors = true, -- define vim.g.terminal_color_{0,17}
@@ -98,5 +98,9 @@ return {
                 },
             })
         end
-    }
+    },
+    -- {
+    --     "embark-theme/vim",
+    --     as = "embark",
+    -- },
 }
