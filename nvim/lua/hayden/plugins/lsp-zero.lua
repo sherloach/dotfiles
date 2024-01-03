@@ -94,15 +94,6 @@ return {
             Variable = " ",
         }
 
-        -- function M.setup()
-        --     local kinds = vim.lsp.protocol.CompletionItemKind
-        --     for i, kind in ipairs(kinds) do
-        --         kinds[i] = M.icons[kind] or kind
-        --     end
-        -- end
-
-        -- M()
-
         cmp.setup({
             sources = {
                 { name = 'path' },
@@ -140,8 +131,8 @@ return {
                 end,
             },
             mapping = cmp.mapping.preset.insert({
-                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+                ['<C-p>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-n>'] = cmp.mapping.scroll_docs(4),
                 ['<C-Space>'] = cmp.mapping.complete(),
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
@@ -149,6 +140,11 @@ return {
                 completion = cmp_window.bordered(),
                 documentation = cmp_window.bordered(),
             },
+        })
+
+        -- Disable inline diagnostics
+        vim.diagnostic.config({
+            virtual_text = false
         })
     end,
 }
