@@ -34,6 +34,7 @@ yabai -m config window_animation_duration    0.0
 yabai -m rule --add app="Arc" space=^1
 yabai -m rule --add app="Notion" space=^1
 
+yabai -m rule --add app="Kitty" space=^2
 yabai -m rule --add app="Alacritty" space=^2
 
 yabai -m rule --add app="Code" space=^3
