@@ -57,6 +57,9 @@ return {
 
         local cmp = require('cmp')
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
+        local cmp_window = require('cmp.config.window')
+
+        require('luasnip.loaders.from_vscode').lazy_load()
 
         cmp.setup({
             sources = {
@@ -70,9 +73,13 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                 ['<C-Space>'] = cmp.mapping.complete(),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
+            window = {
+                completion = cmp_window.bordered(),
+                documentation = cmp_window.bordered(),
+            },
         })
     end,
 }
