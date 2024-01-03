@@ -43,6 +43,13 @@ return {
             vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
         end)
 
+        lsp_zero.set_sign_icons({
+            error = '󰅚',
+            warn = '󰀪',
+            hint = '󰌶',
+            info = ''
+        })
+
         require('mason').setup({})
         require('mason-lspconfig').setup({
             ensure_installed = { 'tsserver', 'rust_analyzer' },
@@ -61,6 +68,41 @@ return {
 
         require('luasnip.loaders.from_vscode').lazy_load()
 
+        local M = {}
+
+        M.icons = {
+            Class = " ",
+            Color = " ",
+            Constant = " ",
+            Constructor = " ",
+            Enum = " ",
+            EnumMember = " ",
+            Field = "󰄶 ",
+            File = " ",
+            Folder = " ",
+            Function = " ",
+            Interface = "󰜰",
+            Keyword = "󰌆 ",
+            Method = "ƒ ",
+            Module = "󰏗 ",
+            Property = " ",
+            Snippet = "󰘍 ",
+            Struct = " ",
+            Text = " ",
+            Unit = " ",
+            Value = "󰎠 ",
+            Variable = " ",
+        }
+
+        -- function M.setup()
+        --     local kinds = vim.lsp.protocol.CompletionItemKind
+        --     for i, kind in ipairs(kinds) do
+        --         kinds[i] = M.icons[kind] or kind
+        --     end
+        -- end
+
+        -- M()
+
         cmp.setup({
             sources = {
                 { name = 'path' },
@@ -69,7 +111,34 @@ return {
                 { name = 'luasnip', keyword_length = 2 },
                 { name = 'buffer',  keyword_length = 3 },
             },
-            formatting = lsp_zero.cmp_format(),
+            -- formatting = lsp_zero.cmp_format(),
+            formatting = {
+                fields = { 'kind', 'abbr', 'menu' },
+                format = function(entry, vim_item)
+                    local maxwidth = 50
+                    local n = entry.source.name
+
+                    if n == 'nvim_lsp' then
+                        vim_item.menu = '[LSP]'
+                    elseif n == 'nvim_lua' then
+                        vim_item.menu = '[nvim]'
+                    else
+                        vim_item.menu = string.format('[%s]', n)
+                    end
+
+                    if maxwidth and #vim_item.abbr > maxwidth then
+                        local last = vim_item.kind == 'Snippet' and '~' or ''
+                        vim_item.abbr = string.format(
+                            '%s %s',
+                            string.sub(vim_item.abbr, 1, maxwidth),
+                            last
+                        )
+                    end
+                    vim_item.kind = M.icons[vim_item.kind]
+
+                    return vim_item
+                end,
+            },
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
