@@ -29,3 +29,6 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- find and replace word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- select all
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
