@@ -66,7 +66,8 @@ return {
                         lotus = {},
                         dragon = {},
                         all = {
-                            ui = { bg_gutter = "none" } }
+                            -- ui = { bg_gutter = "none" }
+                        }
                     },
                 },
                 overrides = function(colors) -- add/modify highlights
