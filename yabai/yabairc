@@ -28,13 +28,15 @@ yabai -m config mouse_drop_action swap
 # Some application/windows appear to have trouble with child windows when made topmost
 yabai -m config window_topmost off
 
+
 yabai -m config auto_balance off
 yabai -m config window_animation_duration    0.0
 
+# Rules
 yabai -m rule --add app="Arc" space=^1
 yabai -m rule --add app="Notion" space=^1
 
-yabai -m rule --add app="Kitty" space=^2
+yabai -m rule --add app="kitty" space=^2
 yabai -m rule --add app="Alacritty" space=^2
 
 yabai -m rule --add app="Code" space=^3
