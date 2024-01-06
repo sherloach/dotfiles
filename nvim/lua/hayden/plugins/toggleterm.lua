@@ -19,6 +19,12 @@ return {
             direction = "float",
             close_on_exit = true, -- close the terminal window when the process exits
             shell = nil,          -- change the default shell
+            -- highlights = {
+            --     FloatBorder = {
+            --         guifg = '#54546D',
+            --     },
+            --     border = '#54546D',
+            -- },
             -- This field is only relevant if direction is set to 'float'
             float_opts = {
                 -- The border key is *almost* the same as 'nvim_win_open'
@@ -48,7 +54,10 @@ return {
         })
 
         local Terminal = require('toggleterm.terminal').Terminal
-        local lazygit  = Terminal:new({ cmd = "lazygit", hidden = true })
+        local lazygit  = Terminal:new({
+            cmd = "lazygit",
+            hidden = true,
+        })
 
         function _lazygit_toggle()
             lazygit:toggle()
