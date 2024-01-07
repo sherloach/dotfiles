@@ -1,72 +1,61 @@
 return {
-    -- "leath-dub/stat.nvim",
-    -- config = function()
-    --     require("stat").setup()
-    -- end
-    "b0o/incline.nvim",
-    config = function()
-        vim.opt.laststatus = 0
-
-        require('incline').setup({
-            debounce_threshold = {
-                falling = 50,
-                rising = 10
-            },
-            hide = {
-                cursorline = false,
-                focused_win = false,
-                only_win = false
-            },
-            highlight = {
-                groups = {
-                    InclineNormal = {
-                        default = true,
-                        group = "NormalFloat"
-                    },
-                    InclineNormalNC = {
-                        default = true,
-                        group = "NormalFloat"
-                    }
-                }
-            },
-            ignore = {
-                buftypes = "special",
-                filetypes = {},
-                floating_wins = true,
-                unlisted_buffers = true,
-                wintypes = "special"
-            },
-            render = "basic",
-            window = {
-                margin = {
-                    horizontal = 1,
-                    vertical = 1
-                },
-                options = {
-                    signcolumn = "no",
-                    wrap = false
-                },
-                padding = 1,
-                padding_char = " ",
-                placement = {
-                    horizontal = "right",
-                    vertical = "top"
-                },
-                width = "fit",
-                winhighlight = {
-                    active = {
-                        EndOfBuffer = "None",
-                        Normal = "InclineNormal",
-                        Search = "None"
-                    },
-                    inactive = {
-                        EndOfBuffer = "None",
-                        Normal = "InclineNormalNC",
-                        Search = "None"
-                    }
-                },
-                zindex = 50
-            }
-        })
-    end
+  'nvim-lualine/lualine.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  config = function()
+    require('lualine').setup {
+      options = {
+        icons_enabled = true,
+        theme = 'auto',
+        section_separators = '',
+        component_separators = '',
+        disabled_filetypes = {
+          statusline = {},
+          winbar = {},
+        },
+        ignore_focus = {},
+        always_divide_middle = true,
+        globalstatus = false,
+        refresh = {
+          statusline = 1000,
+          tabline = 1000,
+          winbar = 1000,
+        }
+      },
+      sections = {
+        lualine_a = {
+          {
+            function()
+              return " 󰀘 "
+            end,
+            padding = { left = 0, right = 0 },
+            color = {},
+            cond = nil,
+          },
+        },
+        lualine_b = {
+          {
+            "b:gitsigns_head",
+            icon = "%#SLGitIcon#" .. "" .. "%*" .. "%#SLBranchName#",
+            color = { gui = "bold" },
+          }
+        },
+        lualine_c = { 'filename' },
+        lualine_x = {},
+        lualine_y = { 'diagnostics' },
+        lualine_z = {}
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
+        lualine_y = {},
+        lualine_z = {}
+      },
+      tabline = {},
+      winbar = {},
+      inactive_winbar = {},
+      extensions = {}
+    }
+  end
 }
