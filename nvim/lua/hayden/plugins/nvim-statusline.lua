@@ -42,7 +42,7 @@ return {
         lualine_c = { 'filename' },
         lualine_x = {},
         lualine_y = { 'diagnostics' },
-        lualine_z = {}
+        lualine_z = { {'filesize', icon = "󰈞", color = { gui = "bold" }} }
       },
       inactive_sections = {
         lualine_a = {},
