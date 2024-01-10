@@ -9,7 +9,7 @@ vim.opt.smartindent = false
 vim.opt.pumheight = 10
 vim.opt.showmode = false
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -27,3 +27,5 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+
+vim.opt.conceallevel = 1
