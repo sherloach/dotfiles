@@ -13,6 +13,12 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- move between windows
+vim.keymap.set('', '<C-h>', '<C-w>h')
+vim.keymap.set('', '<C-k>', '<C-w>k')
+vim.keymap.set('', '<C-j>', '<C-w>j')
+vim.keymap.set('', '<C-l>', '<C-w>l')
+
 -- paste without replace word copied
 vim.keymap.set("x", "<leader>p", "\"_dp")
 
