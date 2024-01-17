@@ -1,3 +1,7 @@
+## Neovim 
+
+[Neovim](nvim.png)
+
 ## Use zsh as main shell
 
 Add this code below to ~/.zshrc
