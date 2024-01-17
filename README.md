@@ -1,6 +1,6 @@
 ## Neovim 
 
-[Neovim](nvim.png)
+![Neovim](nvim.png)
 
 ## Use zsh as main shell
 
