@@ -29,3 +29,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.conceallevel = 1
+
+-- fix enter key not working in quickfix list (https://stackoverflow.com/a/61793352)
+vim.cmd[[autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>]]
