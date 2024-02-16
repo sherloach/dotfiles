@@ -53,6 +53,6 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Stats$" manage=off
 yabai -m rule --add app="^ExpressVPN$" manage=off
-yabai -m rule --add app="^Hearthstone$" manage=off space=^5
+yabai -m rule --add app="^Hearthstone$" manage=off 
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Mail$" manage=off
