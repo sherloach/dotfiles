@@ -48,7 +48,7 @@ return {
         },
       },
       plugins = {
-        stat = { enable = true },
+        -- neotree = { enable = true },
       }
     }
   },

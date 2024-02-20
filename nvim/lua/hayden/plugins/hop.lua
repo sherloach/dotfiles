@@ -1,5 +1,6 @@
 return {
-  "phaazon/hop.nvim",
+  "smoka7/hop.nvim",
+  version = "*",
   event = "BufRead",
   config = function()
     require("hop").setup()
