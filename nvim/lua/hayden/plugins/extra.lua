@@ -16,6 +16,11 @@ return {
     "numToStr/Comment.nvim",
     opts = {},
     lazy = false,
+    config = function()
+      require("Comment").setup({
+          pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      })
+    end
   },
   -- useful when there are embedded languages in certain types of files (e.g. Vue or React)
   { "joosepalviste/nvim-ts-context-commentstring", lazy = true },
