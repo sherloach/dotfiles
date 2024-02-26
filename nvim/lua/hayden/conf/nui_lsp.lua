@@ -40,7 +40,7 @@ local function nui_lsp_rename()
       )
     end)
   end
-  
+
   local popup_options = {
     -- border for the window
     border = {
@@ -67,9 +67,10 @@ local function nui_lsp_rename()
       row = 1,
       col = 0,
     },
-    -- 25 cells wide, should be enough for most identifier names
+    -- dynamicly calculated width based on the name
+    -- max 25 cells wide, should be enough for most identifier names
     size = {
-      width = 25,
+      width = math.min(#curr_name + 8, 25),
       height = 1,
     },
   }
@@ -83,6 +84,10 @@ local function nui_lsp_rename()
   })
 
   input:mount()
+
+  -- make it easier to move around long words
+  local kw = vim.opt.iskeyword - '_' - '-'
+  vim.bo.iskeyword = table.concat(kw:get(), ',')
 
   -- close on <esc> in normal mode
   input:map("n", "<esc>", input.input_props.on_close, { noremap = true })
