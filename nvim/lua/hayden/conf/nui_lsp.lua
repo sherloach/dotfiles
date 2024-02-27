@@ -27,17 +27,6 @@ local function nui_lsp_rename()
       -- name of the identifier. so we apply those edits.
       local client = vim.lsp.get_client_by_id(ctx.client_id)
       vim.lsp.util.apply_workspace_edit(result, client.offset_encoding)
-
-      -- after the edits are applied, the files are not saved automatically.
-      -- let's remind ourselves to save those...
-      local total_files = vim.tbl_count(result.changes)
-      print(
-        string.format(
-          "Changed %s file%s. To save them run ':wa'",
-          total_files,
-          total_files > 1 and "s" or ""
-        )
-      )
     end)
   end
 
