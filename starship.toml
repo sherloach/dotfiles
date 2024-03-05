@@ -1,0 +1,148 @@
+# ~/.config/starship.toml
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bold purple"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[username]
+style_user = "bold dimmed blue"
+show_always = false
+
+[character]
+success_symbol = "[↳](bold green)"     
+error_symbol = "[✗](bold red)"
+vicmd_symbol = "[](bold green)"
+
+# [git_status]
+# ahead = "⇡${count}"
+# conflicted = "⚔️ "
+# behind = "⇣"
+# diverged = "⇕"
+# renamed = "»"
+# deleted = "✘"
+# stashed = "$"
+# untracked = "?"
+# style = "bright-white"
+# format = "$all_status$ahead_behind"
+
+# ahead = "🏎️ 💨 ×${count}"
+# behind = "🐢 ×${count}"
+# diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
+# untracked = "🛤️  ×${count}"
+# stashed = "📦 "
+# modified = "📝 ×${count}"
+# staged = "🗃️  ×${count}"
+# renamed = "📛 ×${count}"
+# deleted = "🗑️  ×${count}"
+# style = "bright-white"
+# format = "$all_status$ahead_behind"
+
+[aws]
+symbol = "  "
+
+[c]
+symbol = "C "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[deno]
+symbol = "deno "
+
+[dotnet]
+symbol = ".NET "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+format = "via [$symbol$context]($style) "
+style = "blue bold"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
+disabled = false
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = "kt "
+
+[memory_usage]
+symbol = " "
+
+[nodejs]
+format = "via [$symbol$version]($style) "
+style = "bold green"
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[ocaml]
+symbol = "ml "
+
+[package]
+# symbol = " "
+disabled = true
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[purescript]
+symbol = "purs "
+
+[python]
+format = "via [$symbol$version]($style) "
+style = "bold green"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${raw}"
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[sudo]
+symbol = "sudo "
+
+[swift]
+symbol = "ﯣ "
