@@ -38,6 +38,7 @@ yabai -m space 3 --layout stack
 yabai -m rule --add app="Spotify" space=^3
 yabai -m rule --add app="Discord" space=^3
 yabai -m rule --add app="Messenger" space=^3 manage=off
+yabai -m rule --add app="WhatsApp" space=^3 manage=off
 
 # Space 4
 yabai -m space 4 --layout stack
