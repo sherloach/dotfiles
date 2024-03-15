@@ -18,9 +18,12 @@ return {
   --     end,
   -- },
   {
-    'morhetz/gruvbox',
+    'lifepillar/vim-solarized8',
     lazy = false,
     priority = 1000,
+    config = function()
+      -- vim.g.solarized_termtrans = 1
+    end
   },
   {
     "rebelot/kanagawa.nvim",
