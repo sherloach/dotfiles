@@ -57,3 +57,4 @@ yabai -m rule --add app="^ExpressVPN$" manage=off
 yabai -m rule --add app="^Hearthstone$" manage=off 
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Mail$" manage=off
+yabai -m rule --add app="^NordVPN$" manage=off
