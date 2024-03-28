@@ -18,11 +18,14 @@ return {
   --     end,
   -- },
   {
+    "dracula/vim",
+    name = "dracula",
+  },
+  {
     'lifepillar/vim-solarized8',
     lazy = false,
     priority = 1000,
     config = function()
-      -- vim.g.solarized_termtrans = 1
     end
   },
   {

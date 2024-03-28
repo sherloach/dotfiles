@@ -1,13 +1,13 @@
 function ColorMyPencils(color)
   color = color or "kanagawa"
-  vim.cmd.colorscheme(color)
+  vim.cmd.colorscheme("kanagawa")
 
   -- snippet to automatically change the theme for the Kitty terminal emulator.
   vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "kanagawa",
     callback = function()
       if vim.o.background == "light" then
-        vim.fn.system("kitty +kitten themes Kanagawa_light")
+        vim.fn.system("kitty +kitten themes Kanagawa")
       elseif vim.o.background == "dark" then
         vim.fn.system("kitty +kitten themes Kanagawa")
       else

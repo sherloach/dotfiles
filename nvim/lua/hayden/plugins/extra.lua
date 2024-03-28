@@ -106,17 +106,36 @@ return {
       },
     },
   },
-  {
-    "f-person/auto-dark-mode.nvim",
-    config = {
-      update_interval = 1000,
-      set_dark_mode = function()
-        vim.api.nvim_set_option("background", "dark")
-      end,
-      set_light_mode = function()
-        vim.api.nvim_set_option("background", "light")
-        -- vim.cmd("colorscheme solarized8")
-      end,
-    },
-  }
+  -- {
+  --   "f-person/auto-dark-mode.nvim",
+  --   config = {
+  --     update_interval = 1000,
+  --     set_dark_mode = function()
+  --       vim.api.nvim_set_option("background", "dark")
+  --       -- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+  --       -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  --       -- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+  --       -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  --       -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "#938AA9" })
+  --       -- vim.api.nvim_set_hl(0, "LineNr", { bg = "#938AA9" })
+  --       -- require('lualine').setup({
+  --       --   options = {
+  --       --     theme = 'solarized_dark',
+  --       --   },
+  --       -- })
+  --     end,
+  --     set_light_mode = function()
+  --       vim.api.nvim_set_option("background", "dark")
+  --       -- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+  --       -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  --       -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "#938AA9" })
+  --       -- vim.api.nvim_set_hl(0, "LineNr", { bg = "#938AA9" })
+  --       -- require('lualine').setup({
+  --       --   options = {
+  --       --     theme = 'solarized_dark',
+  --       --   },
+  --       -- })
+  --     end,
+  --   },
+  -- }
 }
