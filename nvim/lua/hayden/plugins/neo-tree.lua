@@ -28,10 +28,14 @@ return {
           highlight = "NeoTreeModified",
         },
         icon = {
-          folder_closed = "",
-          folder_open = "",
+          -- folder_closed = "",
+          -- folder_open = "",
           folder_empty = "",
           folder_empty_open = "",
+          folder_closed = "",
+          folder_open = "",
+          default = "*",
+          highlight = "NeoTreeFileIcon",
         },
         git_status = {
           symbols = {
