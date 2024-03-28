@@ -75,6 +75,8 @@ return {
             PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
             PmenuSbar = { bg = theme.ui.bg_m1 },
             PmenuThumb = { bg = theme.ui.bg_p2 },
+            SpellBad = { undercurl = true, underline = false, sp = colors.palette.oldWhite },
+            LspInlayHint = { fg = theme.ui.special },
           }
         end,
         -- theme = "wave", -- Load "wave" theme when 'background' option is not set

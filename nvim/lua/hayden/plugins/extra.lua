@@ -106,6 +106,11 @@ return {
       },
     },
   },
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter'
+  }
+
   -- {
   --   "f-person/auto-dark-mode.nvim",
   --   config = {

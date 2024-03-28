@@ -145,9 +145,11 @@ return {
       },
     })
 
-    -- Disable inline diagnostics
     vim.diagnostic.config({
-      virtual_text = false
+      virtual_text = false, -- Disable inline diagnostics
+      -- underline = true,
+      -- signs = true,
+      -- update_in_insert = false,
     })
   end,
 }
