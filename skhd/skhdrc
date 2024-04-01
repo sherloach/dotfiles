@@ -1,16 +1,16 @@
 # focus window
-alt - h : yabai -m window --focus west || yabai -m window --focus stack.prev || yabai -m window --focus stack.last
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east || yabai -m window --focus stack.next || yabai -m window --focus stack.first
+shift + ctrl - h : yabai -m window --focus west || yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+shift + ctrl - j : yabai -m window --focus south
+shift + ctrl - k : yabai -m window --focus north
+shift + ctrl - l : yabai -m window --focus east || yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 # change focus between external displays (left and right)
 alt - s: yabai -m display --focus west
 alt - g: yabai -m display --focus east
 
 # move window to display left and right
-shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
-shift + alt - g : yabai -m window --display east; yabai -m display --focus east;
+# shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
+# shift + alt - g : yabai -m window --display east; yabai -m display --focus east;
 
 # -w Modifying thw Layout --
 
@@ -24,7 +24,26 @@ shift + alt - y : yabai -m space --mirror y-axis
 shift + alt - x : yabai -m space --mirror x-axis
 
 # toggle window float
-shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+shift + ctrl - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# floating window fill left-half screen
+shift + ctrl - left : yabai -m window --toggle float --grid 1:2:0:0:1:1
+
+# floating window fill right-half screen
+shift + ctrl - right : yabai -m window --toggle float --grid 1:2:1:0:1:1
+
+# toggle sticky (show on all spaces)
+# alt - s : yabai -m window --toggle sticky
+
+# toggle topmost (keep above other windows)
+# alt - o : yabai -m window --toggle topmost
+
+# toggle picture-in-picture
+alt - p : yabai -m window --toggle border --toggle pip
+
+# add padding bottom so you can see music player
+hyper - 0: yabai -m config external_bar all:0:0 # remove padding
+hyper - 9: yabai -m config external_bar all:0:63 # add padding
 
 # -- Modifying Window Size --
 #
@@ -65,13 +84,11 @@ ctrl + alt - l : yabai -m window --warp east
 # shift + alt - n : yabai -m window --space next;
 
 # move window to space #
-shift + alt - 1 : yabai -m window --space 1;
-shift + alt - 2 : yabai -m window --space 2;
-shift + alt - 3 : yabai -m window --space 3;
-shift + alt - 4 : yabai -m window --space 4;
-shift + alt - 5 : yabai -m window --space 5;
-shift + alt - 6 : yabai -m window --space 6;
-shift + alt - 7 : yabai -m window --space 7;
+shift + ctrl - 1 : yabai -m window --space 1;
+shift + ctrl - 2 : yabai -m window --space 2;
+shift + ctrl - 3 : yabai -m window --space 3;
+shift + ctrl - 4 : yabai -m window --space 4;
+shift + ctrl - 5 : yabai -m window --space 5;
 
 # focus space
 hyper - tab : yabai -m space --focus recent
@@ -87,5 +104,9 @@ hyper - f : yabai -m space --focus 5;
 # hyper - x : yabai -m space --focus 4 && yabai -m window --focus "$(yabai -m query --windows --space | jq .[0].id)"
 # hyper - ] : yabai -m space --focus 5 && yabai -m window --focus "$(yabai -m query --windows --space | jq .[0].id)"
 
-# restart Yabai 
-hyper - y : yabai --restart-service
+
+# open terminal, blazingly fast compared to iTerm/Hyper
+# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+
+# restart Yabai
+hyper - y : yabai --restart-service | yabai -m rule --apply
