@@ -43,7 +43,7 @@ alt - p : yabai -m window --toggle border --toggle pip
 
 # add padding bottom so you can see music player
 hyper - 0: yabai -m config external_bar all:0:0 # remove padding
-hyper - 9: yabai -m config external_bar all:0:63 # add padding
+hyper - 9: yabai -m config external_bar all:0:70 # add padding
 
 # -- Modifying Window Size --
 #
@@ -109,4 +109,5 @@ hyper - f : yabai -m space --focus 5;
 # cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # restart Yabai
-hyper - y : yabai --restart-service | yabai -m rule --apply
+# hyper - y : yabai --restart-service | yabai -m rule --apply
+hyper - y : yabai --restart-service
