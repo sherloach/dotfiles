@@ -22,6 +22,8 @@ fishd.*
 nvim/lazy-lock.json
 lvim/plugin/packer_compiled.lua
 
+tmux/plugins
+
 # yarn
 yarn
 
