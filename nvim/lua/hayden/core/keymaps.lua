@@ -1,3 +1,7 @@
+-- local discipline = require("hayden.conf.discipline")
+--
+-- discipline.cowboy()
+
 -- set leader key to space
 vim.g.mapleader = " "
 
@@ -41,4 +45,3 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
-

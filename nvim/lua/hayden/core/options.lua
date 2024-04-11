@@ -29,6 +29,13 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.conceallevel = 1
+vim.opt.cursorline = true
+
+vim.cmd [[highlight CursorLine ctermbg=white]]
+
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- fix enter key not working in quickfix list (https://stackoverflow.com/a/61793352)
-vim.cmd[[autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>]]
+vim.cmd [[autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>]]
