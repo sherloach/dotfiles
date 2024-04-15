@@ -1,8 +1,8 @@
 # focus window
-shift + ctrl - h : yabai -m window --focus west || yabai -m window --focus stack.prev || yabai -m window --focus stack.last
-shift + ctrl - j : yabai -m window --focus south
-shift + ctrl - k : yabai -m window --focus north
-shift + ctrl - l : yabai -m window --focus east || yabai -m window --focus stack.next || yabai -m window --focus stack.first
+shift + alt - h : yabai -m window --focus west || yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+shift + alt - j : yabai -m window --focus south
+shift + alt - k : yabai -m window --focus north
+shift + alt - l : yabai -m window --focus east || yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 # change focus between external displays (left and right)
 alt - s: yabai -m display --focus west
@@ -24,13 +24,13 @@ shift + alt - y : yabai -m space --mirror y-axis
 shift + alt - x : yabai -m space --mirror x-axis
 
 # toggle window float
-shift + ctrl - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # floating window fill left-half screen
-shift + ctrl - left : yabai -m window --toggle float --grid 1:2:0:0:1:1
+shift + alt - left : yabai -m window --toggle float --grid 1:2:0:0:1:1
 
 # floating window fill right-half screen
-shift + ctrl - right : yabai -m window --toggle float --grid 1:2:1:0:1:1
+shift + alt - right : yabai -m window --toggle float --grid 1:2:1:0:1:1
 
 # toggle sticky (show on all spaces)
 # alt - s : yabai -m window --toggle sticky
@@ -68,10 +68,10 @@ shift + alt - e : yabai -m space --balance
 # -- Moving Windows Around --
 
 # swap windows
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - h : yabai -m window --swap west
-shift + alt - l : yabai -m window --swap east
+shift + ctrl - j : yabai -m window --swap south
+shift + ctrl - k : yabai -m window --swap north
+shift + ctrl - h : yabai -m window --swap west
+shift + ctrl - l : yabai -m window --swap east
 
 # move window and split
 ctrl + alt - j : yabai -m window --warp south

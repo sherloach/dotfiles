@@ -15,7 +15,7 @@ yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.95
 yabai -m config split_ratio                  0.50
 yabai -m config window_topmost off # Some application/windows appear to have trouble with child windows when made topmost
-yabai -m config auto_balance off
+yabai -m config auto_balance on
 yabai -m config window_animation_duration    0.0
 yabai -m config mouse_follows_focus off
 yabai -m config external_bar all:0:0
