@@ -1,4 +1,4 @@
-## Neovim 
+## Neovim
 
 ![Neovim](nvim.png)
 
@@ -10,6 +10,34 @@ Add this code below to ~/.zshrc
 if [ -r ~/.config/zsh/.zshrc ]; then
   source ~/.config/zsh/.zshrc
 fi
+```
+
+## Brew Bundle
+
+```
+brew bundle install
+```
+
+Looks for `~/Brewfile` and installs its contents
+
+### Install a specific brewfile
+
+If you want to use a brewfile from a non-standard place.
+
+```
+brew bundle --file=~/.private/Brewfile
+```
+
+Or more specifically:
+
+```
+brew bundle install --file=rs-brew-dump
+```
+
+If you want your current system configuration to match your brewfile
+
+```
+brew bundle --force cleanup
 ```
 
 ## Change keyrepeat macOS
