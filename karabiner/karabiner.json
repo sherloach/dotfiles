@@ -18,11 +18,11 @@
         },
         "rules": [
           {
-            "description": "Left Option Key → Hyper Key (⌃⌥⇧⌘)",
+            "description": "Left Command Key → Hyper Key (⌃⌥⇧⌘)",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "left_option",
+                  "key_code": "left_command",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -61,30 +61,6 @@
                 "to": [
                   {
                     "shell_command": "open -a 'Arc.app'"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Open Code Application",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "c",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
                 "type": "basic"
@@ -164,7 +140,7 @@
             ]
           },
           {
-            "description": "Right CMD + d",
+            "description": "Page down",
             "manipulators": [
               {
                 "from": {
@@ -188,7 +164,7 @@
             ]
           },
           {
-            "description": "Right CMD + u",
+            "description": "Page up",
             "manipulators": [
               {
                 "from": {
@@ -567,26 +543,6 @@
           "to": [
             {
               "key_code": "right_control"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "left_command"
-          },
-          "to": [
-            {
-              "key_code": "left_option"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "left_option"
-          },
-          "to": [
-            {
-              "key_code": "left_command"
             }
           ]
         }
