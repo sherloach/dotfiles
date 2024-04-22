@@ -1,6 +1,12 @@
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
+    keys = {
+      { "<leader>fe", false },
+      { "<leader>fE", false },
+      { "<leader>E", false },
+      { "<leader>e", ":Neotree toggle left<CR>", silent = true, desc = "Explorer Neotree" },
+    },
     opts = function(_, opts)
       opts.window.mappings = {
         ["o"] = { "open", nowait = true },
@@ -24,6 +30,13 @@ return {
       vim.o.timeoutlen = 300
     end,
     opts = {
+      icons = {
+        breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+        -- separator = "▎",
+        separator = " ",
+        -- group = "+", -- symbol prepended to a group
+        group = "↳ ", -- symbol prepended to a group
+      },
       window = {
         border = "single",
       },
@@ -51,5 +64,24 @@ return {
         hop.hint_words({ direction = directions.BEFORE_CURSOR })
       end, { remap = true, desc = "Hop Backward" })
     end,
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      -- disable the keymap to grep files
+      { "<leader>ff", false },
+      { "<leader>fg", false },
+      { "<leader>fb", false },
+      -- change a keymap
+      { "<C-p>", "<cmd>Telescope git_files<cr>", desc = "Find Files (git-files)" },
+      -- add a keymap to browse plugin files
+      {
+        "<leader>fp",
+        function()
+          require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+        end,
+        desc = "Find Plugin File",
+      },
+    },
   },
 }

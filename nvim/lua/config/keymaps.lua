@@ -21,3 +21,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
+-- disable some default LazyVim keymaps
+vim.keymap.del("n", "<leader>ft")
+vim.keymap.del("n", "<leader>fT")
