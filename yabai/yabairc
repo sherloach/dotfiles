@@ -42,18 +42,18 @@ yabai_rule app="Alacritty" space=^2
 yabai_rule app="Code" space=^2
 
 # Space 4
-yabai -m space 4 --layout stack
-yabai_rule app="^Spotify$" space=^4
-yabai_rule app="Discord" space=^4
-yabai_rule app="Messenger" space=^4 manage=off
-yabai_rule app="WhatsApp" space=^4 manage=off
+yabai -m space 3 --layout stack
+yabai_rule app="^Spotify$" space=^3
+yabai_rule app="Discord" space=^3
+yabai_rule app="Messenger" space=^3
+yabai_rule app="WhatsApp" space=^3
 
 # Space 3
-yabai -m space 3 --layout stack
-yabai_rule app="Obsidian" space=^3
-yabai_rule app="OrbStack" space=^3
-yabai_rule app="Notion" space=^3
-yabai_rule app="Cisco Packet Tracer" space=^3
+yabai -m space 4 --layout stack
+yabai_rule app="Obsidian" space=^4
+yabai_rule app="OrbStack" space=^4
+yabai_rule app="Notion" space=^4
+yabai_rule app="Cisco Packet Tracer" space=^4
 
 # Disable specific apps
 # For yabai_rule app=".*" sub-layer=normal to apply to windows that are already opened before yabai is launched or this rule is added
