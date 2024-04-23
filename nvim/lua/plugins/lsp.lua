@@ -8,6 +8,9 @@ return {
       keys[#keys + 1] = {
         "gl",
         function()
+          vim.diagnostic.config({
+            float = { border = "rounded" },
+          })
           local float = vim.diagnostic.config().float
 
           if float then
