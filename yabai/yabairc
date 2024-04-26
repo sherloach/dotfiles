@@ -53,7 +53,6 @@ yabai -m space 4 --layout stack
 yabai_rule app="Obsidian" space=^4
 yabai_rule app="OrbStack" space=^4
 yabai_rule app="Notion" space=^4
-yabai_rule app="Cisco Packet Tracer" space=^4
 
 # Disable specific apps
 # For yabai_rule app=".*" sub-layer=normal to apply to windows that are already opened before yabai is launched or this rule is added
