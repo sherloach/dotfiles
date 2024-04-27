@@ -35,6 +35,14 @@ return {
     end,
   },
   {
+    "craftzdog/solarized-osaka.nvim",
+    -- opts = function()
+    --   return {
+    --     transparent = true,
+    --   }
+    -- end,
+  },
+  {
     "folke/noice.nvim",
     opts = function(_, opts)
       table.insert(opts.routes, {
