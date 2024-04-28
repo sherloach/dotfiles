@@ -1,9 +1,41 @@
 return {
   {
     cmd = "Codeium",
+    enabled = false,
     "Exafunction/codeium.nvim",
     build = ":Codeium Auth",
     opts = {},
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = { enabled = true },
+      panel = { enabled = false },
+      filetypes = {
+        rust = true,
+        lua = true,
+        markdown = true,
+        help = true,
+      },
+    },
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = "copilot.lua",
+    opts = {},
+    config = function(_, opts)
+      local copilot_cmp = require("copilot_cmp")
+      copilot_cmp.setup(opts)
+      -- attach cmp source whenever copilot attaches
+      -- fixes lazy-loading issues with the copilot cmp source
+      LazyVim.lsp.on_attach(function(client)
+        if client.name == "copilot" then
+          copilot_cmp._on_insert_enter({})
+        end
+      end)
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -16,6 +48,22 @@ return {
             cmp = { enabled = true },
           },
         },
+      },
+      {
+        "zbirenbaum/copilot-cmp",
+        dependencies = "copilot.lua",
+        opts = {},
+        config = function(_, opts)
+          local copilot_cmp = require("copilot_cmp")
+          copilot_cmp.setup(opts)
+          -- attach cmp source whenever copilot attaches
+          -- fixes lazy-loading issues with the copilot cmp source
+          LazyVim.lsp.on_attach(function(client)
+            if client.name == "copilot" then
+              copilot_cmp._on_insert_enter({})
+            end
+          end)
+        end,
       },
     },
     ---@param opts cmp.ConfigSchema
@@ -47,11 +95,18 @@ return {
         Unit = " ",
         Value = "󰎠 ",
         Variable = " ",
-        Codeium = "",
+        Codeium = require("lazyvim.config").icons.kinds.Codeium,
+        Copilot = require("lazyvim.config").icons.kinds.Copilot,
       }
 
       opts.sources = opts.sources or {}
       table.insert(opts.sources, { name = "crates" })
+
+      table.insert(opts.sources, 1, {
+        name = "copilot",
+        group_index = 1,
+        priority = 100,
+      })
 
       opts.formatting = {
         fields = { "kind", "abbr", "menu" },
