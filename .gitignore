@@ -30,6 +30,9 @@ yarn
 kitty/kitty.conf.bak
 kitty/current-theme.conf
 
+github-copilot/
+ncspot/userstate.cbor
+
 karabiner/automatic_backups
 raycast
 expressvpn
