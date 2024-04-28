@@ -1,0 +1,261 @@
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.bright]
+black = "0x32302f"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xd4be98"
+yellow = "0xd8a657"
+
+[colors.normal]
+black = "0x32302f"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xd4be98"
+yellow = "0xd8a657"
+
+[colors.primary]
+background = "0x0f0f0f"
+foreground = "0xd4be98"
+
+[debug]
+persistent_logging = false
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+builtin_box_drawing = true
+size = 13.0
+
+[font.bold]
+style = "Medium"
+
+[font.bold_italic]
+style = "Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 2
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Alt"
+
+[schemes.github.bright]
+black = "#768390"
+blue = "#6cb6ff"
+cyan = "#96d0ff"
+green = "#8ddb8c"
+magenta = "#dcbdfb"
+red = "#f47067"
+white = "#adbac7"
+yellow = "#f69d50"
+
+[schemes.github.normal]
+black = "#2d333b"
+blue = "#6cb6ff"
+cyan = "#96d0ff"
+green = "#8ddb8c"
+magenta = "#dcbdfb"
+red = "#f47067"
+white = "#adbac7"
+yellow = "#f69d50"
+
+[schemes.github.primary]
+background = "#0e1010"
+foreground = "#adbac7"
+
+[schemes.gruvbox.bright]
+black = "0x32302f"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xd4be98"
+yellow = "0xd8a657"
+
+[schemes.gruvbox.normal]
+black = "0x32302f"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xd4be98"
+yellow = "0xd8a657"
+
+[schemes.gruvbox.primary]
+background = "0x0f0f0f"
+foreground = "0xd4be98"
+
+[schemes.no-clown-fiesta.bright]
+black = "#555555"
+blue = "#a5d6ff"
+cyan = "#75b5aa"
+green = "#90a959"
+magenta = "#cf75bc"
+red = "#cd5c5c"
+white = "#e1e1e1"
+yellow = "#ffdead"
+
+[schemes.no-clown-fiesta.cursor]
+text = "#888888"
+
+[schemes.no-clown-fiesta.normal]
+black = "#202020"
+blue = "#73c0ff"
+cyan = "#5f9ea0"
+green = "#88afa2"
+magenta = "#aa759f"
+red = "#ac4142"
+white = "#d0d0d0"
+yellow = "#f4bf75"
+
+[schemes.no-clown-fiesta.primary]
+background = "#151515"
+foreground = "#e1e1e1"
+
+[schemes.no-clown-fiesta.selection]
+background = "#5e5e5e"
+text = "#e1e1e1"
+
+[schemes.poimandres.bright]
+black = "0xa6accd"
+blue = "0xadd7ff"
+cyan = "0x89ddff"
+green = "0x5de4c7"
+magenta = "0xfae4fc"
+red = "0xd0679d"
+white = "0xffffff"
+yellow = "0xfffac2"
+
+[schemes.poimandres.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[schemes.poimandres.normal]
+black = "0x1b1e28"
+blue = "0x89ddff"
+cyan = "0xadd7ff"
+green = "0x5de4c7"
+magenta = "0xfcc5e9"
+red = "0xd0679d"
+white = "0xffffff"
+yellow = "0xfffac2"
+
+[schemes.poimandres.primary]
+background = "0x1b1e28"
+foreground = "0xa6accd"
+
+[schemes.poimandres.search."colors.footer_bar"]
+background = "0xadd7ff"
+foreground = "0x1b1e28"
+
+[schemes.poimandres.search.focused_match]
+background = "0xadd7ff"
+foreground = "0x1b1e28"
+
+[schemes.poimandres.search.matches]
+background = "0xadd7ff"
+foreground = "0x1b1e28"
+
+[schemes.poimandres.selection]
+background = "0x303340"
+text = "CellForeground"
+
+[schemes.poimandres.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[schemes.selection]
+background = "0xdc3232"
+text = "0xffffff"
+white = "0xffffff"
+
+[schemes.solarized.bright]
+black = "#657B83"
+blue = "#49AEF5"
+cyan = "#29EEDF"
+green = "#BAFB00"
+magenta = "#F255A1"
+red = "#F6524F"
+white = "#EEE8D5"
+yellow = "#FFC100"
+
+[schemes.solarized.normal]
+black = "#657B83"
+blue = "#268BD2"
+cyan = "#2AA198"
+green = "#859900"
+magenta = "#D33682"
+red = "#DC322F"
+white = "#9EACAD"
+yellow = "#B58900"
+
+[schemes.solarized.primary]
+background = "#00141A"
+foreground = "#ADB8B8"
+
+[schemes.tokyo-night.bright]
+black = "#444b6a"
+blue = "#7da6ff"
+cyan = "#0db9d7"
+green = "#b9f27c"
+magenta = "#bb9af7"
+red = "#ff7a93"
+white = "#acb0d0"
+yellow = "#ff9e64"
+
+[schemes.tokyo-night.normal]
+black = "#32344a"
+blue = "#7aa2f7"
+cyan = "#449dab"
+green = "#9ece6a"
+magenta = "#ad8ee6"
+red = "#f7768e"
+white = "#787c99"
+yellow = "#e0af68"
+
+[schemes.tokyo-night.primary]
+background = "#1a1b26"
+foreground = "#a9b1d6"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "buttonless"
+dynamic_title = true
+opacity = 1
+
+[window.dimensions]
+columns = 140
+lines = 40
+
+[window.padding]
+x = 0
+y = 0
