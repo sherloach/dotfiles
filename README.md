@@ -20,6 +20,20 @@ brew bundle install
 
 Looks for `~/Brewfile` and installs its contents
 
+### Creating a Brewfile
+
+Current directory
+
+```
+brew bundle dump
+```
+
+if a Brewfile already exists, need to do
+
+```
+brew bundle dump --force
+```
+
 ### Install a specific brewfile
 
 If you want to use a brewfile from a non-standard place.
