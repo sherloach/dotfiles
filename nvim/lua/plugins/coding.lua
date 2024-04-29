@@ -100,8 +100,8 @@ return {
       }
 
       opts.sources = opts.sources or {}
-      table.insert(opts.sources, { name = "crates" })
 
+      table.insert(opts.sources, { name = "crates" })
       table.insert(opts.sources, 1, {
         name = "copilot",
         group_index = 1,
@@ -133,8 +133,8 @@ return {
       }
 
       opts.mapping = cmp.mapping.preset.insert({
-        ["<C-p>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-n>"] = cmp.mapping.scroll_docs(4),
+        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<C-Space>"] = function()
           if cmp.visible() then
