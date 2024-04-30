@@ -190,17 +190,18 @@ return {
         min_chars = 2,
       },
 
-      templates = {
-        subdir = "templates",
-        date_format = "%Y-%m-%d-%a",
-        time_format = "%H:%M",
-        substitutions = {},
-      },
+      -- templates = {
+      --   subdir = "templates",
+      --   date_format = "%Y-%m-%d-%a",
+      --   time_format = "%H:%M",
+      --   substitutions = {},
+      -- },
 
       daily_notes = {
         date_format = "%Y-%m-%d",
         folder = "notes/daily",
         alias_format = "%A %B %d, %Y",
+        template = nil,
         -- template = "nvim-daily.md",
       },
 
