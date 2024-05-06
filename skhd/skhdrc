@@ -26,11 +26,11 @@ shift + alt - x : yabai -m space --mirror x-axis
 # toggle window float
 shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
-# floating window fill left-half screen
-shift + alt - left : yabai -m window --toggle float --grid 1:2:0:0:1:1
+# floating window fill left-half screen (1/3 screen)
+shift + alt - left : yabai -m window --toggle float --grid 1:3:0:0:1:1
 
-# floating window fill right-half screen
-shift + alt - right : yabai -m window --toggle float --grid 1:2:1:0:1:1
+# floating window fill right-half screen (2/3 screen)
+shift + alt - right : yabai -m window --toggle float --grid 1:3:1:0:2:1
 
 # toggle sticky (show on all spaces)
 # alt - s : yabai -m window --toggle sticky
