@@ -9,3 +9,7 @@ vim.opt.backup = false
 
 -- disable clipboard when use 'd', 'x'
 vim.opt.clipboard = ""
+
+-- LSP Server to use for Python.
+vim.g.lazyvim_python_lsp = "pyright"
+vim.g.lazyvim_python_ruff = "ruff_lsp"

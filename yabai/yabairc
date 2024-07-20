@@ -36,10 +36,12 @@ function yabai_rule {
 # yabai_rule app="^Arc$" space=^1
 
 # Space 2
+yabai -m space 2 --layout stack
 yabai_rule app="^iTerm2$" space=^2
 yabai_rule app="^kitty$" space=^2
 yabai_rule app="Alacritty" space=^2
 yabai_rule app="Code" space=^2
+yabai_rule app="Zed" space=^2
 
 # Space 3
 yabai -m space 3 --layout stack
@@ -53,6 +55,7 @@ yabai_rule app="WhatsApp" space=^3
 yabai -m space 4 --layout stack
 yabai_rule app="Obsidian" space=^4
 yabai_rule app="OrbStack" space=^4
+yabai_rule app="Azure Data Studio" space=^4
 yabai_rule app="Notion" space=^4
 
 # Disable specific apps
@@ -68,3 +71,5 @@ yabai_rule app="^Hearthstone$" manage=off
 # yabai_rule app="Finder" manage=off
 yabai_rule app="^Mail$" manage=off
 yabai_rule app="^NordVPN$" manage=off
+yabai_rule app="^League of Legends$" manage=off
+yabai_rule app="^Riot Client$" manage=off
