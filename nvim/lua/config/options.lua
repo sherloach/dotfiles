@@ -6,6 +6,7 @@ vim.opt.relativenumber = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
+-- vim.opt.number = false
 
 -- disable clipboard when use 'd', 'x'
 vim.opt.clipboard = ""

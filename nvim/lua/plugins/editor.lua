@@ -5,7 +5,7 @@ return {
       { "<leader>fe", false },
       { "<leader>fE", false },
       { "<leader>E", false },
-      { "<leader>e", ":Neotree toggle right<CR>", silent = true, desc = "Explorer Neotree" },
+      { "<leader>e", ":Neotree toggle left<CR>", silent = true, desc = "Explorer Neotree" },
     },
     opts = function(_, opts)
       opts.window.mappings = {
