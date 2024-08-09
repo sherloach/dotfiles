@@ -36,12 +36,13 @@ function yabai_rule {
 # yabai_rule app="^Arc$" space=^1
 
 # Space 2
-yabai -m space 2 --layout stack
+yabai -m space 2 --layout --label work
 yabai_rule app="^iTerm2$" space=^2
 yabai_rule app="^kitty$" space=^2
 yabai_rule app="Alacritty" space=^2
 yabai_rule app="Code" space=^2
 yabai_rule app="Zed" space=^2
+yabai_rule app="^Simulator$" space=^2 manage=on
 
 # Space 3
 yabai -m space 3 --layout stack
