@@ -234,141 +234,141 @@ return {
       opts.config.header = header
     end,
   },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    enabled = false,
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.g.lualine_laststatus = vim.o.laststatus
-      if vim.fn.argc(-1) > 0 then
-        -- set an empty statusline till lualine loads
-        vim.o.statusline = " "
-      else
-        -- hide the statusline on the starter page
-        vim.o.laststatus = 0
-      end
-    end,
-    config = function()
-      local status, lualine = pcall(require, "lualine")
-      if not status then
-        return
-      end
-
-      local hide_in_width = function()
-        return vim.fn.winwidth(0) > 80
-      end
-
-      local diagnostics = {
-        "diagnostics",
-        sources = { "nvim_diagnostic" },
-        sections = { "error", "warn" },
-        symbols = { error = " ", warn = " " },
-        -- colored = false,
-        -- always_visible = true,
-      }
-
-      local diff = {
-        "diff",
-        -- colored = false,
-        symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-        cond = hide_in_width,
-      }
-
-      local filename = {
-        "filename",
-        path = 1,
-      }
-
-      local filetype = {
-        "filetype",
-        icons_enabled = false,
-      }
-
-      local location = {
-        "location",
-        padding = 0,
-      }
-
-      lualine.setup({
-        options = {
-          globalstatus = true,
-          icons_enabled = true,
-          theme = "auto",
-          component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
-          disabled_filetypes = { "alpha", "dashboard" },
-          always_divide_middle = true,
-        },
-        sections = {
-          lualine_a = { "mode" },
-          lualine_b = { "branch" },
-          lualine_c = { diagnostics },
-          lualine_x = { diff, filename, filetype },
-          lualine_y = { location },
-          lualine_z = { "progress" },
-        },
-      })
-    end,
-  },
   -- {
-  --   "folke/edgy.nvim",
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   enabled = false,
+  -- },
+  -- {
+  --   "nvim-lualine/lualine.nvim",
   --   event = "VeryLazy",
   --   init = function()
-  --     vim.opt.laststatus = 3
-  --     vim.opt.splitkeep = "screen"
+  --     vim.g.lualine_laststatus = vim.o.laststatus
+  --     if vim.fn.argc(-1) > 0 then
+  --       -- set an empty statusline till lualine loads
+  --       vim.o.statusline = " "
+  --     else
+  --       -- hide the statusline on the starter page
+  --       vim.o.laststatus = 0
+  --     end
   --   end,
-  --   opts = {
-  --     left = {
-  --       -- Neo-tree filesystem always takes half the screen height
-  --       {
-  --         title = "Neo-Tree",
-  --         ft = "neo-tree",
-  --         filter = function(buf)
-  --           return vim.b[buf].neo_tree_source == "filesystem"
-  --         end,
-  --         size = { height = 0.5 },
+  --   config = function()
+  --     local status, lualine = pcall(require, "lualine")
+  --     if not status then
+  --       return
+  --     end
+  --
+  --     local hide_in_width = function()
+  --       return vim.fn.winwidth(0) > 80
+  --     end
+  --
+  --     local diagnostics = {
+  --       "diagnostics",
+  --       sources = { "nvim_diagnostic" },
+  --       sections = { "error", "warn" },
+  --       symbols = { error = " ", warn = " " },
+  --       -- colored = false,
+  --       -- always_visible = true,
+  --     }
+  --
+  --     local diff = {
+  --       "diff",
+  --       -- colored = false,
+  --       symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+  --       cond = hide_in_width,
+  --     }
+  --
+  --     local filename = {
+  --       "filename",
+  --       path = 1,
+  --     }
+  --
+  --     local filetype = {
+  --       "filetype",
+  --       icons_enabled = false,
+  --     }
+  --
+  --     local location = {
+  --       "location",
+  --       padding = 0,
+  --     }
+  --
+  --     lualine.setup({
+  --       options = {
+  --         globalstatus = true,
+  --         icons_enabled = true,
+  --         theme = "auto",
+  --         component_separators = { left = "", right = "" },
+  --         section_separators = { left = "", right = "" },
+  --         disabled_filetypes = { "alpha", "dashboard" },
+  --         always_divide_middle = true,
   --       },
-  --       {
-  --         title = "Neo-Tree Git",
-  --         ft = "neo-tree",
-  --         filter = function(buf)
-  --           return vim.b[buf].neo_tree_source == "git_status"
-  --         end,
-  --         pinned = false,
-  --         collapsed = true, -- show window as closed/collapsed on start
-  --         open = "Neotree position=right git_status",
+  --       sections = {
+  --         lualine_a = { "mode" },
+  --         lualine_b = { "branch" },
+  --         lualine_c = { diagnostics },
+  --         lualine_x = { diff, filename, filetype },
+  --         lualine_y = { location },
+  --         lualine_z = { "progress" },
   --       },
-  --       {
-  --         title = "Neo-Tree Buffers",
-  --         ft = "neo-tree",
-  --         filter = function(buf)
-  --           return vim.b[buf].neo_tree_source == "buffers"
-  --         end,
-  --         pinned = false,
-  --         collapsed = true, -- show window as closed/collapsed on start
-  --         open = "Neotree position=top buffers",
-  --       },
-  --       {
-  --         title = function()
-  --           local buf_name = vim.api.nvim_buf_get_name(0) or "[No Name]"
-  --           return vim.fn.fnamemodify(buf_name, ":t")
-  --         end,
-  --         ft = "Outline",
-  --         pinned = false,
-  --         open = "SymbolsOutlineOpen",
-  --       },
-  --       -- any other neo-tree windows
-  --       "neo-tree",
-  --     },
-  --     animate = {
-  --       enabled = false,
-  --     },
-  --     wo = {
-  --       winfixheight = true,
-  --     },
-  --   },
+  --     })
+  --   end,
   -- },
+  {
+    "folke/edgy.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.opt.laststatus = 3
+      vim.opt.splitkeep = "screen"
+    end,
+    opts = {
+      options = {
+        right = { size = 70 },
+      },
+      left = {
+        -- Neo-tree filesystem always takes half the screen height
+        {
+          title = "Neo-Tree",
+          ft = "neo-tree",
+          filter = function(buf)
+            return vim.b[buf].neo_tree_source == "filesystem"
+          end,
+          size = { height = 0.5 },
+        },
+        {
+          title = "Neo-Tree Git",
+          ft = "neo-tree",
+          filter = function(buf)
+            return vim.b[buf].neo_tree_source == "git_status"
+          end,
+          pinned = false,
+          collapsed = true, -- show window as closed/collapsed on start
+          open = "Neotree position=right git_status",
+        },
+        {
+          title = "Neo-Tree Buffers",
+          ft = "neo-tree",
+          filter = function(buf)
+            return vim.b[buf].neo_tree_source == "buffers"
+          end,
+          pinned = false,
+          collapsed = true, -- show window as closed/collapsed on start
+          open = "Neotree position=top buffers",
+        },
+        {
+          title = function()
+            local buf_name = vim.api.nvim_buf_get_name(0) or "[No Name]"
+            return vim.fn.fnamemodify(buf_name, ":t")
+          end,
+          ft = "Outline",
+          pinned = false,
+          open = "SymbolsOutlineOpen",
+        },
+        -- any other neo-tree windows
+        "neo-tree",
+      },
+      animate = {
+        enabled = false,
+      },
+    },
+  },
 }
