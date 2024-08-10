@@ -1,6 +1,6 @@
 function ColorMyPencils(color)
-  color = color or "kanagawa"
-  vim.cmd.colorscheme("kanagawa")
+  color = color or "dracula"
+  vim.cmd.colorscheme("dracula")
 
   -- snippet to automatically change the theme for the Kitty terminal emulator.
   vim.api.nvim_create_autocmd("ColorScheme", {
