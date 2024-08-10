@@ -1,5 +1,9 @@
 ## Neovim
 
+### 08/2024
+![Neovim](neovim.jpeg)
+
+### 2023
 ![Neovim](nvim.png)
 
 ## Use zsh as main shell
