@@ -121,17 +121,17 @@ return {
       -- })
     end,
   },
-  {
-    "maxmx03/solarized.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("solarized").setup({
-        -- theme = "neo",
-      })
-    end,
-  },
-  { "joshdick/onedark.vim" },
+  -- {
+  --   "maxmx03/solarized.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("solarized").setup({
+  --       -- theme = "neo",
+  --     })
+  --   end,
+  -- },
+  -- { "joshdick/onedark.vim" },
   {
     "folke/noice.nvim",
     opts = function(_, opts)
@@ -202,40 +202,30 @@ return {
     opts = function(_, opts)
       local version = vim.version()
       local header = {
-        "                                                                    ",
-        "            :h-                                  Nhy`               ",
-        "           -mh.                           h.    `Ndho               ",
-        "           hmh+                          oNm.   oNdhh               ",
-        "          `Nmhd`                        /NNmd  /NNhhd               ",
-        "          -NNhhy                      `hMNmmm`+NNdhhh               ",
-        "          .NNmhhs              ```....`..-:/./mNdhhh+               ",
-        "           mNNdhhh-     `.-::///+++////++//:--.`-/sd`               ",
-        "           oNNNdhhdo..://++//++++++/+++//++///++/-.`                ",
-        "      y.   `mNNNmhhhdy+/++++//+/////++//+++///++////-` `/oos:       ",
-        " .    Nmy:  :NNNNmhhhhdy+/++/+++///:.....--:////+++///:.`:s+        ",
-        " h-   dNmNmy oNNNNNdhhhhy:/+/+++/-         ---:/+++//++//.`         ",
-        " hd+` -NNNy`./dNNNNNhhhh+-://///    -+oo:`  ::-:+////++///:`        ",
-        " /Nmhs+oss-:++/dNNNmhho:--::///    /mmmmmo  ../-///++///////.       ",
-        "  oNNdhhhhhhhs//osso/:---:::///    /yyyyso  ..o+-//////////:/.      ",
-        "   /mNNNmdhhhh/://+///::://////     -:::- ..+sy+:////////::/:/.     ",
-        "     /hNNNdhhs--:/+++////++/////.      ..-/yhhs-/////////::/::/`    ",
-        "       .ooo+/-::::/+///////++++//-/ossyyhhhhs/:///////:::/::::/:    ",
-        "       -///:::::::////++///+++/////:/+ooo+/::///////.::://::---+`   ",
-        "       /////+//++++/////+////-..//////////::-:::--`.:///:---:::/:   ",
-        "       //+++//++++++////+++///::--                 .::::-------::   ",
-        "       :/++++///////////++++//////.                -:/:----::../-   ",
-        "       -/++++//++///+//////////////               .::::---:::-.+`   ",
-        "       `////////////////////////////:.            --::-----...-/    ",
-        "        -///://////////////////////::::-..      :-:-:-..-::.`.+`    ",
-        "         :/://///:///::://::://::::::/:::::::-:---::-.-....``/- -   ",
-        "           ::::://::://::::::::::::::----------..-:....`.../- -+oo/ ",
-        "            -/:::-:::::---://:-::-::::----::---.-.......`-/.      ``",
-        "           s-`::--:::------:////----:---.-:::...-.....`./:          ",
-        "          yMNy.`::-.--::..-dmmhhhs-..-.-.......`.....-/:`           ",
-        "         oMNNNh. `-::--...:NNNdhhh/.--.`..``.......:/-              ",
-        "        :dy+:`      .-::-..NNNhhd+``..`...````.-::-`                ",
-        "                        .-:mNdhh:.......--::::-`                    ",
-        "                           yNh/..------..`                          ",
+        "           ⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡴⠖⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠲⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠙⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⣰⠋⠀⡆⢀⠀⠀⠀⢤⢾⣱⣜⣾⣧⣶⣶⣶⣿⣷⣷⣶⣦⣤⣄⡀⣼⣞⣆⠈⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⣼⠃⠀⠀⡿⡏⡇⡄⢀⣼⣷⣿⣿⣿⣿⣿⣿⡿⠿⣿⡿⠿⠿⠿⠿⢿⣿⣿⣿⣢⡀⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⣰⡇⠀⠀⣤⠻⡽⣼⣿⣿⣿⣿⡿⠿⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠷⢦⣀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⣿⠀⠀⠀⣌⢷⣿⣿⡿⠟⢋⡡⠀⠀⢀⣠⣤⣴⣶⣿⣿⣿⣿⣿⣷⣶⣤⣄⡀⠀⠀⠀⠀⠀⠀⣈⡙⠶⣤⡀⠀⠀",
+        "⠀⠀⠀⠀⠀⣿⠀⠀⢦⣸⠛⠛⢁⡀⣀⣈⢀⣴⣾⣿⣿⣿⠏⣿⢿⣿⣿⣿⡏⠈⢻⣿⠿⣿⣶⣔⢿⣦⣠⣮⣽⠛⠀⠀⠙⢦⠀",
+        "⠀⠀⠀⠀⠀⢿⠀⣠⠞⢩⣴⣿⡿⡿⣯⣷⣿⣿⣿⣿⣿⠏⢠⡿⢸⣿⣿⡟⠀⠀⠀⢻⡆⠘⣿⣿⣷⣝⠺⣿⣦⠀⠀⠀⠀⠀⢳",
+        "⠀⠀⠀⠀⠀⣨⠟⠁⠐⢷⡹⠋⣰⣿⣿⣿⣿⣿⣿⣿⠏⠀⢸⠃⢸⣿⡟⠀⠀⠀⠀⠸⡇⠀⠘⣿⣿⣿⣷⣄⡁⠀⠀⠀⠀⠀⠈⡇",
+        "⠀⠀⠀⣠⠞⠁⠀⠀⠀⠈⢀⣼⣿⣿⣿⣿⠏⢸⣿⠇⠀⠠⠏⠀⢸⠏⠀⠀⠀⠀⠀⠀⠇⠀⠀⢸⣿⣿⣏⠉⡉⡀⠀⠀⠀⠀⣰⡇",
+        "⠀⠀⡼⠁⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⡟⠀⢸⡟⠀⠀⠀⠀⠘⡏⣀⣿⡒⡿⠀⠀⠀⣀⠀⠀⠈⣿⣿⣿⣧⣿⣿⡆⠀⠀⣠⠏",
+        "⠀⣼⠃⠀⢀⣶⣖⡄⠀⣾⣿⣿⣿⣿⣿⠃⠀⢸⣛⣲⣦⣤⣤⣤⣴⡟⠙⣷⣤⣤⠴⠾⠥⣤⡀⠀⣿⣿⡿⠿⣿⣿⠃⢀⡴⠁⠀",
+        "⢸⡇⠀⠀⣼⣸⣻⢀⢰⣿⣿⣿⣿⣿⣿⠀⠸⢿⣶⣶⣦⠶⠋⡼⠟⠀⠀⡏⠉⣟⠻⣿⠿⣋⠁⠀⣿⣿⣮⣨⡾⣣⡼⠋⠀⠀⠀",
+        "⢸⡇⠀⠀⣿⣿⢸⡻⣸⣿⡟⣭⢿⣿⡽⠄⠀⠀⠀⠀⠀⠀⠀⣠⣶⡀⠀⢻⣲⡦⣉⡋⠙⠏⠀⢸⠋⣞⣹⠗⠋⠁⠀⠀⠀⠀⠀",
+        "⠘⣇⠀⠀⢿⣾⣯⣝⠮⢹⣇⠇⣷⡹⣧⠀⠀⠀⠀⢀⡠⠚⠀⠀⠈⠁⠀⠘⠉⠀⠀⠙⢦⠀⠀⢸⣾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠘⣆⠈⡪⠽⣿⣽⠶⠚⠻⣮⣙⠳⢿⡄⠀⠀⠀⠋⠀⠀⢀⣠⠤⠤⠤⠤⢄⣀⠀⠀⠈⠇⠀⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠘⢶⣍⢻⠒⢺⠾⠩⠽⡇⣈⣙⣶⣷⡀⠀⠀⢀⡤⠚⠉⢀⣤⢴⢶⣤⣄⠉⠙⠲⢤⡀⢠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠈⠉⠋⠉⠉⠉⠉⠉⠀⠀⠀⠈⠻⣦⣀⡉⢀⡠⠞⠉⢠⠏⠘⡄⠻⡍⠲⢦⣤⠷⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⡶⣤⣤⣄⣀⣤⣥⣤⣶⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡏⠛⠿⢿⣿⣿⡿⣿⡃⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣴⠇⠀⠀⠀⠉⢻⣿⣿⣣⢿⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣴⣶⣿⣿⣯⠀⠀⠀⠀⠀⠀⠘⠛⠋⠈⠋⠙⣿⣷⣦⣤⣤⡀⠀⠀       ",
         "                                                                    ",
         "N E O V I M - v " .. version.major .. "." .. version.minor,
         "",
@@ -323,4 +313,62 @@ return {
       })
     end,
   },
+  -- {
+  --   "folke/edgy.nvim",
+  --   event = "VeryLazy",
+  --   init = function()
+  --     vim.opt.laststatus = 3
+  --     vim.opt.splitkeep = "screen"
+  --   end,
+  --   opts = {
+  --     left = {
+  --       -- Neo-tree filesystem always takes half the screen height
+  --       {
+  --         title = "Neo-Tree",
+  --         ft = "neo-tree",
+  --         filter = function(buf)
+  --           return vim.b[buf].neo_tree_source == "filesystem"
+  --         end,
+  --         size = { height = 0.5 },
+  --       },
+  --       {
+  --         title = "Neo-Tree Git",
+  --         ft = "neo-tree",
+  --         filter = function(buf)
+  --           return vim.b[buf].neo_tree_source == "git_status"
+  --         end,
+  --         pinned = false,
+  --         collapsed = true, -- show window as closed/collapsed on start
+  --         open = "Neotree position=right git_status",
+  --       },
+  --       {
+  --         title = "Neo-Tree Buffers",
+  --         ft = "neo-tree",
+  --         filter = function(buf)
+  --           return vim.b[buf].neo_tree_source == "buffers"
+  --         end,
+  --         pinned = false,
+  --         collapsed = true, -- show window as closed/collapsed on start
+  --         open = "Neotree position=top buffers",
+  --       },
+  --       {
+  --         title = function()
+  --           local buf_name = vim.api.nvim_buf_get_name(0) or "[No Name]"
+  --           return vim.fn.fnamemodify(buf_name, ":t")
+  --         end,
+  --         ft = "Outline",
+  --         pinned = false,
+  --         open = "SymbolsOutlineOpen",
+  --       },
+  --       -- any other neo-tree windows
+  --       "neo-tree",
+  --     },
+  --     animate = {
+  --       enabled = false,
+  --     },
+  --     wo = {
+  --       winfixheight = true,
+  --     },
+  --   },
+  -- },
 }

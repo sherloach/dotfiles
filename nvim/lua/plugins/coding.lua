@@ -1,12 +1,5 @@
 return {
   {
-    cmd = "Codeium",
-    enabled = false,
-    "Exafunction/codeium.nvim",
-    build = ":Codeium Auth",
-    opts = {},
-  },
-  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     build = ":Copilot auth",
@@ -95,7 +88,7 @@ return {
         Unit = " ",
         Value = "󰎠 ",
         Variable = " ",
-        Codeium = require("lazyvim.config").icons.kinds.Codeium,
+        -- Codeium = require("lazyvim.config").icons.kinds.Codeium,
         Copilot = require("lazyvim.config").icons.kinds.Copilot,
       }
 
