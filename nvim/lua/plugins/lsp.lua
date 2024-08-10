@@ -24,6 +24,7 @@ return {
       }
     end,
     opts = {
+      inlay_hints = { enabled = false },
       servers = {
         rust_analyzer = {},
         taplo = {
