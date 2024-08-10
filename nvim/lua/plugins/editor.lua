@@ -33,7 +33,7 @@ return {
       icons = {
         -- breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         -- separator = "▎",
-        -- separator = " ",
+        separator = "→",
         -- group = "+", -- symbol prepended to a group
         -- group = "↳ ", -- symbol prepended to a group
       },
