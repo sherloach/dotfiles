@@ -23,7 +23,7 @@ return {
       -- Create which-key mappings for common commands.
       local wk = require("which-key")
 
-      wk.register({
+      wk.add({
         ["<leader>o"] = {
           name = "Obsidian",
           o = { "<cmd>ObsidianOpen<cr>", "Open note" },
@@ -69,7 +69,7 @@ return {
         },
       })
 
-      wk.register({
+      wk.add({
         ["<leader>o"] = {
           name = "Obsidian",
           e = {
