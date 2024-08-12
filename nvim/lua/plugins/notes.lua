@@ -24,76 +24,73 @@ return {
       local wk = require("which-key")
 
       wk.add({
-        ["<leader>o"] = {
-          name = "Obsidian",
-          o = { "<cmd>ObsidianOpen<cr>", "Open note" },
-          d = { "<cmd>ObsidianDailies -10 0<cr>", "Daily notes" },
-          p = { "<cmd>ObsidianPasteImg<cr>", "Paste image" },
-          q = { "<cmd>ObsidianQuickSwitch<cr>", "Quick switch" },
-          s = { "<cmd>ObsidianSearch<cr>", "Search" },
-          t = { "<cmd>ObsidianTags<cr>", "Tags" },
-          l = { "<cmd>ObsidianLinks<cr>", "Links" },
-          b = { "<cmd>ObsidianBacklinks<cr>", "Backlinks" },
-          m = { "<cmd>ObsidianTemplate<cr>", "Template" },
-          n = { "<cmd>ObsidianQuickSwitch nav<cr>", "Nav" },
-          r = { "<cmd>ObsidianRename<cr>", "Rename" },
-          w = { "<cmd>ObsidianWorkspace<cr>", "Workspace" },
-          c = {
-            function()
-              local day_of_week = os.date("%A")
-              assert(type(day_of_week) == "string")
+        { "<leader>o", group = "Obsidian" },
+        { "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "Open note" },
+        { "<leader>od", "<cmd>ObsidianDailies -10 0<cr>", desc = "Daily notes" },
+        { "<leader>op", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image" },
+        { "<leader>oq", "<cmd>ObsidianQuickSwitch<cr>", desc = "Quick switch" },
+        { "<leader>os", "<cmd>ObsidianSearch<cr>", desc = "Search" },
+        { "<leader>ot", "<cmd>ObsidianTags<cr>", desc = "Tags" },
+        { "<leader>ol", "<cmd>ObsidianLinks<cr>", desc = "Links" },
+        { "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Backlinks" },
+        { "<leader>om", "<cmd>ObsidianTemplate<cr>", desc = "Template" },
+        { "<leader>on", "<cmd>ObsidianQuickSwitch nav<cr>", desc = "Nav" },
+        { "<leader>or", "<cmd>ObsidianRename<cr>", desc = "Rename" },
+        { "<leader>ow", "<cmd>ObsidianWorkspace<cr>", desc = "Workspace" },
+        {
+          "<leader>oc",
+          function()
+            local day_of_week = os.date("%A")
+            assert(type(day_of_week) == "string")
 
-              ---@type integer
-              local offset_start
-              if day_of_week == "Sunday" then
-                offset_start = 1
-              elseif day_of_week == "Monday" then
-                offset_start = 0
-              elseif day_of_week == "Tuesday" then
-                offset_start = -1
-              elseif day_of_week == "Wednesday" then
-                offset_start = -2
-              elseif day_of_week == "Thursday" then
-                offset_start = -3
-              elseif day_of_week == "Friday" then
-                offset_start = -4
-              elseif day_of_week == "Saturday" then
-                offset_start = 2
-              end
-              assert(offset_start)
+            ---@type integer
+            local offset_start
+            if day_of_week == "Sunday" then
+              offset_start = 1
+            elseif day_of_week == "Monday" then
+              offset_start = 0
+            elseif day_of_week == "Tuesday" then
+              offset_start = -1
+            elseif day_of_week == "Wednesday" then
+              offset_start = -2
+            elseif day_of_week == "Thursday" then
+              offset_start = -3
+            elseif day_of_week == "Friday" then
+              offset_start = -4
+            elseif day_of_week == "Saturday" then
+              offset_start = 2
+            end
+            assert(offset_start)
 
-              vim.cmd(string.format("ObsidianDailies %d %d", offset_start, offset_start + 4))
-            end,
-            "Current week",
-          },
+            vim.cmd(string.format("ObsidianDailies %d %d", offset_start, offset_start + 4))
+          end,
+          desc = "Current week",
         },
-      })
-
-      wk.add({
-        ["<leader>o"] = {
-          name = "Obsidian",
-          e = {
+        {
+          mode = { "v" },
+          {
+            "<leader>oe",
             function()
               local title = vim.fn.input({ prompt = "Enter title (optional): " })
               vim.cmd("ObsidianExtractNote " .. title)
             end,
-            "Extract text into new note",
+            desc = "Extract text into new note",
           },
-          l = {
+          {
+            "<leader>ol",
             function()
               vim.cmd("ObsidianLink")
             end,
-            "Link text to an existing note",
+            desc = "Link text to an existing note",
           },
-          n = {
+          {
+            "<leader>on",
             function()
               vim.cmd("ObsidianLinkNew")
             end,
-            "Link text to a new note",
+            desc = "Link text to a new note",
           },
         },
-      }, {
-        mode = "v",
       })
     end,
     opts = {
