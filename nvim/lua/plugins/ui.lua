@@ -5,8 +5,8 @@ return {
     priority = 1000,
     config = function()
       require("kanagawa").setup({
-        typeStyle = { italic = false },
-        keywordStyle = { italic = false },
+        -- typeStyle = { italic = false },
+        -- keywordStyle = { italic = false },
         colors = {
           -- add/modify theme and palette colors
           palette = {},

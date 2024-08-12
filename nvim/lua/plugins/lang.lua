@@ -1,13 +1,54 @@
+-- local chars = {
+--   border_n = "▄",
+--   border_e = "█",
+--   border_s = "▀",
+--   border_w = "█",
+--
+--   corner_nw = "",
+--   corner_ne = "",
+--   corner_se = "",
+--   corner_sw = "",
+-- }
+-- local border = {
+--     { '┌', 'FloatBorder' },
+--     { '─', 'FloatBorder' },
+--     { '┐', 'FloatBorder' },
+--     { '│', 'FloatBorder' },
+--     { '┘', 'FloatBorder' },
+--     { '─', 'FloatBorder' },
+--     { '└', 'FloatBorder' },
+--     { '│', 'FloatBorder' },
+-- }
+-- local lsp_config = require("lspconfig")
+-- local cmp_window = require("cmp.config.window")
+
 return {
   {
     "Saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
     opts = {
+      autoupdate_throttle = 50,
+      max_parallel_requests = 32,
+      -- popup = {
+      --   border = cmp_window.bordered(),
+      --   show_version_date = true,
+      -- },
       completion = {
-        cmp = {
+        crates = {
           enabled = true,
+          max_results = 30,
+        },
+        cmp = {
+          use_custom_kind = true,
         },
       },
+      -- lsp = {
+      --   enabled = true,
+      --   on_attach = lsp_config.on_attach,
+      --   actions = true,
+      --   completion = true,
+      --   hover = true,
+      -- },
     },
   },
   {
