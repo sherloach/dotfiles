@@ -50,6 +50,12 @@ return {
           -- to fully override the default_config, change the below
           -- filetypes = {}
         },
+        -- Swift
+        sourcekit = {
+          cmd = {
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
+          },
+        },
       },
       setup = {
         rust_analyzer = function()
@@ -84,5 +90,26 @@ return {
         end,
       },
     },
+    config = function()
+      -- Swift LSP setup for file with 'swift' extension
+      -- https://chrishannah.me/using-a-swift-lsp-in-neovim/
+      local swift_lsp = vim.api.nvim_create_augroup("swift_lsp", { clear = true })
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "swift" },
+        callback = function()
+          local root_dir = vim.fs.dirname(vim.fs.find({
+            "Package.swift",
+            ".git",
+          }, { upward = true })[1])
+          local client = vim.lsp.start({
+            name = "sourcekit-lsp",
+            cmd = { "sourcekit-lsp" },
+            root_dir = root_dir,
+          })
+          vim.lsp.buf_attach_client(0, client)
+        end,
+        group = swift_lsp,
+      })
+    end,
   },
 }
