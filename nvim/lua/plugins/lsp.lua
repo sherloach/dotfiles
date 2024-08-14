@@ -1,3 +1,15 @@
+local function get_root_dir(fname)
+  -- Attempt to find the nearest Package.swift or .git directory
+  local root = vim.fs.dirname(vim.fs.find({ "Package.swift", ".git" }, { upward = true, path = fname })[1])
+
+  -- If no root directory is found, default to the directory of the current file
+  if root then
+    return root
+  else
+    return vim.fn.getcwd()
+  end
+end
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -50,11 +62,14 @@ return {
           -- to fully override the default_config, change the below
           -- filetypes = {}
         },
-        -- Swift
         sourcekit = {
           cmd = {
-            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
+            "sourcekit-lsp",
           },
+          filetypes = { "swift" },
+          root_dir = function(fname)
+            return get_root_dir(fname)
+          end,
         },
       },
       setup = {
@@ -90,26 +105,5 @@ return {
         end,
       },
     },
-    config = function()
-      -- Swift LSP setup for file with 'swift' extension
-      -- https://chrishannah.me/using-a-swift-lsp-in-neovim/
-      local swift_lsp = vim.api.nvim_create_augroup("swift_lsp", { clear = true })
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "swift" },
-        callback = function()
-          local root_dir = vim.fs.dirname(vim.fs.find({
-            "Package.swift",
-            ".git",
-          }, { upward = true })[1])
-          local client = vim.lsp.start({
-            name = "sourcekit-lsp",
-            cmd = { "sourcekit-lsp" },
-            root_dir = root_dir,
-          })
-          vim.lsp.buf_attach_client(0, client)
-        end,
-        group = swift_lsp,
-      })
-    end,
   },
 }
