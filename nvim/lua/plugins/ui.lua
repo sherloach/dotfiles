@@ -323,6 +323,7 @@ return {
     opts = {
       options = {
         right = { size = 70 },
+        left = { size = 35 },
       },
       left = {
         -- Neo-tree filesystem always takes half the screen height

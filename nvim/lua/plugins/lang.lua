@@ -1,27 +1,3 @@
--- local chars = {
---   border_n = "▄",
---   border_e = "█",
---   border_s = "▀",
---   border_w = "█",
---
---   corner_nw = "",
---   corner_ne = "",
---   corner_se = "",
---   corner_sw = "",
--- }
--- local border = {
---     { '┌', 'FloatBorder' },
---     { '─', 'FloatBorder' },
---     { '┐', 'FloatBorder' },
---     { '│', 'FloatBorder' },
---     { '┘', 'FloatBorder' },
---     { '─', 'FloatBorder' },
---     { '└', 'FloatBorder' },
---     { '│', 'FloatBorder' },
--- }
--- local lsp_config = require("lspconfig")
--- local cmp_window = require("cmp.config.window")
-
 return {
   {
     "Saecki/crates.nvim",
@@ -56,6 +32,7 @@ return {
     version = "^4", -- Recommended
     ft = { "rust" },
     opts = {
+      -- TODO: look at the keymap in the docs
       server = {
         on_attach = function(_, bufnr)
           vim.keymap.set("n", "<leader>ce", function()
