@@ -32,12 +32,23 @@ return {
     version = "^4", -- Recommended
     ft = { "rust" },
     opts = {
+      tools = {
+        float_win_config = {
+          border = "rounded",
+        },
+      },
       -- TODO: look at the keymap in the docs
       server = {
         on_attach = function(_, bufnr)
           vim.keymap.set("n", "<leader>ce", function()
             vim.cmd.RustLsp("explainError")
           end, { desc = "Rust Explain Error", buffer = bufnr })
+          vim.keymap.set("n", "<leader>co", function()
+            vim.cmd.RustLsp("openDocs")
+          end, { desc = "Rust Open docs.rs Documentation", buffer = bufnr })
+          vim.keymap.set("n", "<leader>cp", function()
+            vim.cmd.RustLsp("parentModule")
+          end, { desc = "Rust Parent Module", buffer = bufnr })
         end,
         default_settings = {
           -- rust-analyzer language server configuration
