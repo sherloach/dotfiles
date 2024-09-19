@@ -92,7 +92,7 @@
             ]
           },
           {
-            "description": "Open Cursor Application",
+            "description": "Open Code Application",
             "manipulators": [
               {
                 "from": {
@@ -108,7 +108,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Cursor.app'"
+                    "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
                 "type": "basic"
