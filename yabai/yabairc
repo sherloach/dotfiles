@@ -33,7 +33,7 @@ function yabai_rule {
 }
 
 # Space 1
-# yabai_rule app="^Arc$" space=^1
+yabai_rule app="^Arc$" space=^1
 
 # Space 2
 yabai -m space 2 --layout --label work
@@ -72,5 +72,4 @@ yabai_rule app="^Hearthstone$" manage=off
 # yabai_rule app="Finder" manage=off
 yabai_rule app="^Mail$" manage=off
 yabai_rule app="^NordVPN$" manage=off
-yabai_rule app="^League of Legends$" manage=off
-yabai_rule app="^Riot Client$" manage=off
+yabai_rule app="^Vocabpop$" manage=off

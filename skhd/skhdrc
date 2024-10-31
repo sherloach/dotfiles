@@ -12,6 +12,8 @@ alt - g: yabai -m display --focus east
 # shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
 # shift + alt - g : yabai -m window --display east; yabai -m display --focus east;
 
+alt - tab : [ $(yabai -m query --windows --space | jq -re "map(select(.\"has-focus\" == true)) | length != 0") = true ] && yabai -m window --focus "$(yabai -m query --windows --space | jq -re "[sort_by(.id, .frame) | reverse | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\") | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")" ||  yabai -m window --focus "$(yabai -m query --spaces --space | jq -re ".windows[0]?")" &> /dev/null
+
 # -w Modifying thw Layout --
 
 # rotate layout clockwise
@@ -97,6 +99,9 @@ hyper - w : yabai -m space --focus 2;
 hyper - e : yabai -m space --focus 3;
 hyper - d : yabai -m space --focus 4;
 hyper - f : yabai -m space --focus 5;
+
+hyper - o : yabai -m window --focus "$(yabai -m query --windows --space | jq -re "[sort_by(.id, .frame) | reverse | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\") | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")"
+
 
 # hyper - i : yabai -m space --focus 1 && yabai -m window --focus "$(yabai -m query --windows --space | jq .[0].id)"
 # hyper - o : yabai -m space --focus 2 && yabai -m window --focus "$(yabai -m query --windows --space | jq .[0].id)"
