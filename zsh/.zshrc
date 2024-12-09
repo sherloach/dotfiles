@@ -11,6 +11,7 @@ alias lla="ll -A"
 alias g=git
 alias lv=lvim
 alias v=nvim
+alias c='cursor'
 
 alias python=/usr/local/bin/python3
 alias lg='lazygit'
