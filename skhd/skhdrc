@@ -45,7 +45,7 @@ alt - p : yabai -m window --toggle border --toggle pip
 
 # add padding bottom so you can see music player
 hyper - 0: yabai -m config external_bar all:0:0 # remove padding
-hyper - 9: yabai -m config external_bar all:0:100 # add padding
+hyper - 9: yabai -m config external_bar all:0:85 # add padding
 
 # -- Modifying Window Size --
 #
