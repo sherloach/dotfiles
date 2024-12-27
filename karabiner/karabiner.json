@@ -101,14 +101,14 @@
                         ]
                     },
                     {
-                        "description": "Open Kitty Application",
+                        "description": "Open Ghostty Application",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Kitty.app'" }],
+                                "to": [{ "shell_command": "open -a 'Ghostty.app'" }],
                                 "type": "basic"
                             }
                         ]
