@@ -1,3 +1,5 @@
 theme = "vesper"
-font-family = "Fira Code"
+font-family = "Dank Mono"
+font-size = 14
+font-thicken = true
 font-feature = -liga
