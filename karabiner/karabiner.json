@@ -23,14 +23,14 @@
                         ]
                     },
                     {
-                        "description": "Open Arc Application",
+                        "description": "Open Chrome Application",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Arc.app'" }],
+                                "to": [{ "shell_command": "open -a 'Google Chrome.app'" }],
                                 "type": "basic"
                             }
                         ]
@@ -62,14 +62,14 @@
                         ]
                     },
                     {
-                        "description": "Open ChatGPT Application",
+                        "description": "Open Jan Application",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'ChatGPT.app'" }],
+                                "to": [{ "shell_command": "open -a 'Jan.app'" }],
                                 "type": "basic"
                             }
                         ]
