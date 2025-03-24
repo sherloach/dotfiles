@@ -39,7 +39,6 @@ yabai_rule app="^Arc$" space=^1
 yabai -m space 2 --layout --label work
 yabai_rule app="^iTerm2$" space=^2
 yabai_rule app="^kitty$" space=^2
-yabai_rule app="Alacritty" space=^2
 yabai_rule app="Code" space=^2
 yabai_rule app="Cursor" space=^2
 yabai_rule app="Zed" space=^2
@@ -68,9 +67,9 @@ yabai_rule app="^System Preferences$" manage=off
 yabai_rule app="^System Settings$" manage=off
 yabai_rule app="^Karabiner-Elements$" manage=off
 yabai_rule app="^Stats$" manage=off
-yabai_rule app="^ExpressVPN$" manage=off
 yabai_rule app="^Hearthstone$" manage=off
 # yabai_rule app="Finder" manage=off
-yabai_rule app="^Mail$" manage=off
-yabai_rule app="^NordVPN$" manage=off
-yabai_rule app="^Vocabpop$" manage=off
+# yabai_rule app="^Mail$" manage=off
+# yabai_rule app="^NordVPN$" manage=off
+yabai_rule app="Things" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on
+yabai_rule app="Jan" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on
