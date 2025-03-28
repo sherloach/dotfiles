@@ -21,11 +21,11 @@ yabai -m config mouse_follows_focus on
 yabai -m config external_bar all:0:0
 
 # Set all padding and gaps to 20pt (default: 0)
-yabai -m config top_padding    10
-yabai -m config bottom_padding 10
-yabai -m config left_padding   10
-yabai -m config right_padding  10
-yabai -m config window_gap     10
+yabai -m config top_padding    8
+yabai -m config bottom_padding 8
+yabai -m config left_padding   8
+yabai -m config right_padding  8
+yabai -m config window_gap     8
 
 function yabai_rule {
   yabai -m rule --add "$@"
@@ -33,13 +33,12 @@ function yabai_rule {
 }
 
 # Space 1
-yabai_rule app="^Arc$" space=^1
+yabai_rule app="^Zen$" space=^1
 
 # Space 2
 yabai -m space 2 --layout --label work
-yabai_rule app="^iTerm2$" space=^2
-yabai_rule app="^kitty$" space=^2
 yabai_rule app="Code" space=^2
+yabai_rule app="Ghostty" space=^2
 yabai_rule app="Cursor" space=^2
 yabai_rule app="Zed" space=^2
 yabai_rule app="^Simulator$" space=^2 manage=on
@@ -58,6 +57,7 @@ yabai_rule app="Obsidian" space=^4
 yabai_rule app="OrbStack" space=^4
 yabai_rule app="Azure Data Studio" space=^4
 yabai_rule app="Notion" space=^4
+yabai_rule app="Figma" space=^4
 
 # Disable specific apps
 # For yabai_rule app=".*" sub-layer=normal to apply to windows that are already opened before yabai is launched or this rule is added
