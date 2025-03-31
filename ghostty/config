@@ -1,5 +1,5 @@
 theme = "vesper"
-font-family = "Fira Code"
-font-size = 12
+font-family = "Hasklig"
+font-size = 13
 font-thicken = true
 font-feature = -liga
