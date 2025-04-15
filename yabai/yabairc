@@ -36,28 +36,26 @@ function yabai_rule {
 yabai_rule app="^Zen$" space=^1
 
 # Space 2
-yabai -m space 2 --layout --label work
 yabai_rule app="Code" space=^2
-yabai_rule app="Ghostty" space=^2
 yabai_rule app="Cursor" space=^2
 yabai_rule app="Zed" space=^2
-yabai_rule app="^Simulator$" space=^2 manage=on
+yabai_rule app="^Simulator$" space=^2
 
 # Space 3
-yabai -m space 3 --layout stack
-yabai_rule app="^Spotify$" space=^3
-yabai_rule app="^Music$" space=^3
-yabai_rule app="Discord" space=^3
-yabai_rule app="Messenger" space=^3
-yabai_rule app="WhatsApp" space=^3
+yabai_rule app="Ghostty" space=^3
 
 # Space 4
-yabai -m space 4 --layout stack
-yabai_rule app="Obsidian" space=^4
-yabai_rule app="OrbStack" space=^4
-yabai_rule app="Azure Data Studio" space=^4
+yabai_rule app="^Spotify$" space=^4
+yabai_rule app="^Music$" space=^4
+yabai_rule app="Discord" space=^4
 yabai_rule app="Notion" space=^4
-yabai_rule app="Figma" space=^4
+yabai_rule app="Things" space=^4
+
+# Space 5
+yabai -m space 5 --layout stack
+yabai_rule app="OrbStack" space=^5
+yabai_rule app="Azure Data Studio" space=^5
+yabai_rule app="Figma" space=^5
 
 # Disable specific apps
 # For yabai_rule app=".*" sub-layer=normal to apply to windows that are already opened before yabai is launched or this rule is added
@@ -68,5 +66,5 @@ yabai_rule app="^System Settings$" manage=off
 yabai_rule app="^Karabiner-Elements$" manage=off
 yabai_rule app="^Stats$" manage=off
 yabai_rule app="^Hearthstone$" manage=off
-yabai_rule app="Things" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on
-yabai_rule app="Jan" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on manage=off
+# yabai_rule app="Things" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on
+# yabai_rule app="Jan" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on manage=off
