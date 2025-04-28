@@ -23,6 +23,27 @@
                         ]
                     },
                     {
+                        "description": "Remap Command+M to Command+H for Hide",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": ["command"]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "CTRL-BSPC to OPT-BSPC",
                         "manipulators": [
                             {
@@ -121,11 +142,24 @@
                         ]
                     },
                     {
+                        "description": "Open LobeChat Application",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'LobeHub-Beta.app'" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Open Things Application",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "f",
+                                    "key_code": "v",
                                     "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
                                 },
                                 "to": [{ "shell_command": "open -a 'Things3.app'" }],
@@ -160,27 +194,14 @@
                         ]
                     },
                     {
-                        "description": "Open Jan Application",
+                        "description": "Open BoltAI Application",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Jan.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Open Simulator Application",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'Simulator.app'" }],
+                                "to": [{ "shell_command": "open -a 'BoltAI.app'" }],
                                 "type": "basic"
                             }
                         ]
