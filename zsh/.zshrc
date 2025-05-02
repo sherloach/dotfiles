@@ -12,6 +12,7 @@ alias g=git
 alias lv=lvim
 alias v=nvim
 alias c='cursor'
+alias ws='windsurf'
 
 alias python=/usr/local/bin/python3
 alias lg='lazygit'

@@ -38,6 +38,7 @@ yabai_rule app="^Zen$" space=^1
 # Space 2
 yabai_rule app="Code" space=^2
 yabai_rule app="Cursor" space=^2
+yabai_rule app="Windsurf" space=^2
 yabai_rule app="Zed" space=^2
 yabai_rule app="^Simulator$" space=^2
 
@@ -66,5 +67,6 @@ yabai_rule app="^System Settings$" manage=off
 yabai_rule app="^Karabiner-Elements$" manage=off
 yabai_rule app="^Stats$" manage=off
 yabai_rule app="^Hearthstone$" manage=off
+yabai_rule app="LobeHub-Beta" mouse_follows_focus=on sticky=on
 # yabai_rule app="Things" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on
 # yabai_rule app="Jan" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on manage=off
